@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PinterestShareButton from '@/components/PinterestShareButton';
 import RelatedPostsSidebar from '@/components/RelatedPostsSidebar';
+import RelatedPostsFooter from '@/components/RelatedPostsFooter';
 import ContentWithPinterestButtons from '@/components/ContentWithPinterestButtons';
 import TableOfContents from '@/components/TableOfContents';
 import { notFound } from 'next/navigation';
@@ -224,6 +225,9 @@ export default async function PostPage({ params }: PostPageProps) {
                 </div>
               </div>
             )}
+
+            {/* Related Posts Footer */}
+            <RelatedPostsFooter posts={relatedPosts} />
           </div>
 
           {/* Sidebar */}
