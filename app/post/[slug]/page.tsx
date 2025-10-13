@@ -15,6 +15,10 @@ interface PostPageProps {
   };
 }
 
+// Enable ISR (Incremental Static Regeneration)
+// Posts will be regenerated every 60 seconds when requested
+export const revalidate = 60; // seconds
+
 // Generate static paths for all posts
 export async function generateStaticParams() {
   const posts = await getPosts();

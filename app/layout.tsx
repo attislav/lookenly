@@ -92,8 +92,19 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            <div className="border-t border-neutral-800 pt-8 text-center">
-              <p className="text-neutral-500 text-xs tracking-wider">&copy; 2025 Lookenly. All rights reserved.</p>
+            <div className="border-t border-neutral-800 pt-8">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-4">
+                <a href="/privacy" className="text-neutral-400 hover:text-amber-200 transition-colors duration-200 text-sm">
+                  Privacy Policy
+                </a>
+                <a href="/terms" className="text-neutral-400 hover:text-amber-200 transition-colors duration-200 text-sm">
+                  Terms of Service
+                </a>
+                <a href="/disclaimer" className="text-neutral-400 hover:text-amber-200 transition-colors duration-200 text-sm">
+                  Disclaimer
+                </a>
+              </div>
+              <p className="text-neutral-500 text-xs tracking-wider text-center">&copy; 2025 Lookenly. All rights reserved.</p>
             </div>
           </div>
         </footer>

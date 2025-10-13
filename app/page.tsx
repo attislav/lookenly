@@ -4,6 +4,9 @@ import PinterestImage from '@/components/PinterestImage';
 import { getPosts, getCategories } from '@/lib/wordpress';
 import { Post, Category } from '@/types';
 
+// Enable ISR (Incremental Static Regeneration)
+export const revalidate = 60; // seconds
+
 export default async function Home() {
   // Daten von WordPress holen (Server-Side)
   const posts = await getPosts();

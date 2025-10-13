@@ -9,6 +9,9 @@ interface TagPageProps {
   };
 }
 
+// Enable ISR (Incremental Static Regeneration)
+export const revalidate = 60; // seconds
+
 // Generate static paths for all tags
 export async function generateStaticParams() {
   const tags = await getTags();

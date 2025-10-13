@@ -81,6 +81,12 @@ fashion-blog/
 │   ├── page.tsx                 # Homepage (Hero, Categories, Posts)
 │   ├── about/
 │   │   └── page.tsx            # About-Seite
+│   ├── privacy/
+│   │   └── page.tsx            # Privacy Policy (US/UK/International)
+│   ├── terms/
+│   │   └── page.tsx            # Terms of Service
+│   ├── disclaimer/
+│   │   └── page.tsx            # Disclaimer (für Blog-Content)
 │   ├── post/[slug]/
 │   │   └── page.tsx            # Einzelner Blog-Post (SSG)
 │   ├── category/[slug]/
@@ -89,10 +95,12 @@ fashion-blog/
 │       └── page.tsx            # Tag-Archiv (SSG)
 ├── components/
 │   ├── Navigation.tsx           # Header Navigation mit Logo
+│   ├── Analytics.tsx            # Tracking Scripts (GA, AdSense, Meta, Pinterest)
 │   ├── PinterestImage.tsx       # Next.js Image Wrapper
 │   ├── PinterestShareButton.tsx # Pinterest Share Button
 │   ├── ContentWithPinterestButtons.tsx # Dynamische Pin Buttons auf Content-Bildern
-│   └── RelatedPostsSidebar.tsx  # Sticky Sidebar mit verwandten Posts
+│   ├── RelatedPostsSidebar.tsx  # Sticky Sidebar mit verwandten Posts
+│   └── RelatedPostsFooter.tsx   # Verwandte Posts am Ende eines Artikels
 ├── lib/
 │   └── wordpress.ts             # GraphQL Queries & API Calls
 ├── types/
@@ -179,15 +187,17 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization');
 - ✅ **WordPress Gutenberg Styling** (erzwungene Typografie mit !important)
 - ✅ **Next.js 15 Kompatibilität** (await params in dynamic routes)
 - ✅ **Smooth Scrolling** mit Offset für Ankerlinks
+- ✅ **Legal Pages (English):** Privacy Policy, Terms of Service, Disclaimer (US/UK/International compliant)
+- ✅ **Analytics Integration:** Flexible Script-Verwaltung (GA, AdSense, Meta, Pinterest)
+- ✅ **Related Posts Footer:** Artikel-Ende mit verwandten Posts
 
 ### Geplant / To-Do
+- ⏳ **Cookie-Banner** (Real Cookie Banner oder Complianz)
 - ⏳ Newsletter-Integration (Formular funktioniert noch nicht)
 - ⏳ Tag-Wolke auf Sidebar
 - ⏳ Author Bio Pages
 - ⏳ Kommentar-System (optional)
-- ⏳ Analytics Integration (Google Analytics / Plausible)
-- ⏳ Internal Link Injection ("Das könnte Dich auch interessieren")
-- ⏳ Deployment auf Vercel
+- ⏳ Internal Link Injection (AI-powered, automatisch)
 
 ---
 
@@ -439,10 +449,21 @@ Make.com → WordPress REST API → WordPress Datenbank
 - ✅ Image Aspect Ratio von 3:4 → 3:2 korrigiert
 - ✅ Next.js 15 params await Fix in allen dynamic routes
 
+### 2025-01-13 - Legal Pages (English) & Analytics
+- ✅ Privacy Policy erstellt (`/app/privacy/page.tsx`) - US/UK/International compliant
+- ✅ Terms of Service erstellt (`/app/terms/page.tsx`)
+- ✅ Disclaimer erstellt (`/app/disclaimer/page.tsx`)
+- ✅ Footer Links zu rechtlichen Seiten (Privacy, Terms, Disclaimer)
+- ✅ Analytics Component erstellt für flexible Script-Verwaltung (`components/Analytics.tsx`)
+- ✅ Support für Google Analytics, AdSense, Meta Pixel, Pinterest Tag
+- ✅ SCRIPTS-MANAGEMENT.md Dokumentation erstellt
+- ✅ Related Posts Footer Component (`components/RelatedPostsFooter.tsx`)
+- ❌ German Impressum/Datenschutz removed (not applicable for English sites)
+
 ### Next Steps
-- ⏳ Typography User-Testing (aktuell in Progress)
+- ⏳ Cookie-Banner Integration (Real Cookie Banner oder Complianz)
 - ⏳ Newsletter-Integration
-- ⏳ Production Deployment auf Vercel
+- ⏳ Performance Testing (Lighthouse, Mobile)
 
 ---
 
@@ -487,7 +508,7 @@ useEffect(() => {
 
 ---
 
-*Letzte Aktualisierung: 2025-01-10 (Typography & Pinterest Features)*
+*Letzte Aktualisierung: 2025-01-13 (Legal Pages & Analytics)*
 *Projektstart: 2025-01-10*
 
 ---

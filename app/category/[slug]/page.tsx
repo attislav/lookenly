@@ -10,6 +10,9 @@ interface CategoryPageProps {
   };
 }
 
+// Enable ISR (Incremental Static Regeneration)
+export const revalidate = 60; // seconds
+
 // Generate static paths for all categories
 export async function generateStaticParams() {
   const categories = await getCategories();
