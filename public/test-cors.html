@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS Test für wp.lookenly.com</title>
+    <style>
+        body {
+            font-family: monospace;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #00ff00;
+        }
+        button {
+            background: #00ff00;
+            color: #1a1a1a;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 5px;
+            font-family: monospace;
+        }
+        button:hover {
+            background: #00cc00;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #2a2a2a;
+            border: 2px solid #00ff00;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .success { color: #00ff00; }
+        .error { color: #ff0000; }
+        .info { color: #ffaa00; }
+    </style>
+</head>
+<body>
+    <h1>🧪 CORS Test für WordPress GraphQL</h1>
+    <p class="info">Teste ob dein WordPress CORS richtig konfiguriert ist</p>
+
+    <button onclick="testCORS()">🚀 CORS Test starten</button>
+    <button onclick="testGraphQL()">📊 GraphQL Query testen</button>
+    <button onclick="clearResult()">🗑️ Ergebnis löschen</button>
+
+    <div id="result">Klicke auf einen Button um zu starten...</div>
+
+    <script>
+        const WORDPRESS_URL = 'https://wp.lookenly.com/graphql';
+
+        function clearResult() {
+            document.getElementById('result').innerHTML = 'Klicke auf einen Button um zu starten...';
+        }
+
+        async function testCORS() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<span class="info">⏳ Teste CORS...</span>\n\n';
+
+            try {
+                const response = await fetch(WORDPRESS_URL, {
+                    method: 'OPTIONS',
+                    headers: {
+                        'Origin': window.location.origin,
+                        'Access-Control-Request-Method': 'POST',
+                        'Access-Control-Request-Headers': 'Content-Type'
+                    }
+                });
+
+                resultDiv.innerHTML += '<span class="success">✅ CORS Preflight erfolgreich!</span>\n\n';
+                resultDiv.innerHTML += '<strong>Response Headers:</strong>\n';
+
+                response.headers.forEach((value, key) => {
+                    resultDiv.innerHTML += `${key}: ${value}\n`;
+                });
+
+                // Prüfe wichtige CORS Headers
+                const allowOrigin = response.headers.get('Access-Control-Allow-Origin');
+                const allowMethods = response.headers.get('Access-Control-Allow-Methods');
+                const allowHeaders = response.headers.get('Access-Control-Allow-Headers');
+
+                resultDiv.innerHTML += '\n<strong>CORS Analyse:</strong>\n';
+
+                if (allowOrigin) {
+                    resultDiv.innerHTML += `<span class="success">✅ Allow-Origin: ${allowOrigin}</span>\n`;
+                } else {
+                    resultDiv.innerHTML += `<span class="error">❌ Allow-Origin fehlt!</span>\n`;
+                }
+
+                if (allowMethods) {
+                    resultDiv.innerHTML += `<span class="success">✅ Allow-Methods: ${allowMethods}</span>\n`;
+                } else {
+                    resultDiv.innerHTML += `<span class="error">❌ Allow-Methods fehlt!</span>\n`;
+                }
+
+                if (allowHeaders) {
+                    resultDiv.innerHTML += `<span class="success">✅ Allow-Headers: ${allowHeaders}</span>\n`;
+                } else {
+                    resultDiv.innerHTML += `<span class="error">❌ Allow-Headers fehlt!</span>\n`;
+                }
+
+            } catch (error) {
+                resultDiv.innerHTML += `<span class="error">❌ CORS Test fehlgeschlagen!</span>\n`;
+                resultDiv.innerHTML += `<span class="error">Fehler: ${error.message}</span>\n\n`;
+                resultDiv.innerHTML += '<span class="info">Mögliche Ursachen:\n';
+                resultDiv.innerHTML += '- CORS Headers nicht gesetzt\n';
+                resultDiv.innerHTML += '- WordPress nicht erreichbar\n';
+                resultDiv.innerHTML += '- wp-config.php Änderungen nicht gespeichert</span>';
+            }
+        }
+
+        async function testGraphQL() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<span class="info">⏳ Sende GraphQL Query...</span>\n\n';
+
+            const query = `
+                query {
+                    posts(first: 3) {
+                        nodes {
+                            id
+                            title
+                            slug
+                            excerpt
+                            categories {
+                                nodes {
+                                    name
+                                }
+                            }
+                        }
+                    }
+                }
+            `;
+
+            try {
+                const response = await fetch(WORDPRESS_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query })
+                });
+
+                const data = await response.json();
+
+                if (data.errors) {
+                    resultDiv.innerHTML += '<span class="error">⚠️ GraphQL Errors:</span>\n';
+                    resultDiv.innerHTML += JSON.stringify(data.errors, null, 2);
+                } else {
+                    resultDiv.innerHTML += '<span class="success">✅ GraphQL Query erfolgreich!</span>\n\n';
+                    resultDiv.innerHTML += '<strong>Posts gefunden:</strong>\n\n';
+
+                    if (data.data.posts.nodes.length === 0) {
+                        resultDiv.innerHTML += '<span class="info">Keine Posts gefunden. Erstelle Posts in WordPress!</span>\n';
+                    } else {
+                        data.data.posts.nodes.forEach((post, index) => {
+                            resultDiv.innerHTML += `<span class="success">${index + 1}. ${post.title}</span>\n`;
+                            resultDiv.innerHTML += `   Slug: ${post.slug}\n`;
+                            resultDiv.innerHTML += `   Kategorie: ${post.categories.nodes.map(c => c.name).join(', ') || 'Keine'}\n\n`;
+                        });
+                    }
+
+                    resultDiv.innerHTML += '\n<strong>Rohe Antwort:</strong>\n';
+                    resultDiv.innerHTML += JSON.stringify(data, null, 2);
+                }
+
+                // CORS Check auch hier
+                resultDiv.innerHTML += '\n\n<strong>Response Headers:</strong>\n';
+                const allowOrigin = response.headers.get('Access-Control-Allow-Origin');
+                if (allowOrigin) {
+                    resultDiv.innerHTML += `<span class="success">✅ CORS funktioniert! Origin: ${allowOrigin}</span>\n`;
+                }
+
+            } catch (error) {
+                resultDiv.innerHTML += `<span class="error">❌ GraphQL Request fehlgeschlagen!</span>\n`;
+                resultDiv.innerHTML += `<span class="error">Fehler: ${error.message}</span>\n\n`;
+
+                if (error.message.includes('CORS')) {
+                    resultDiv.innerHTML += '<span class="error">🚨 CORS FEHLER!</span>\n\n';
+                    resultDiv.innerHTML += '<span class="info">Lösung:\n';
+                    resultDiv.innerHTML += '1. Überprüfe wp-config.php CORS Headers\n';
+                    resultDiv.innerHTML += '2. Stelle sicher dass der Code VOR "That\'s all, stop editing!" steht\n';
+                    resultDiv.innerHTML += '3. Speichere wp-config.php und lade neu\n';
+                    resultDiv.innerHTML += '4. Leere Browser Cache (Strg+Shift+R)</span>';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
