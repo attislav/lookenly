@@ -3,6 +3,7 @@ import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import ScrollToTop from "@/components/ScrollToTop";
+import Analytics from "@/components/Analytics";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -60,6 +61,7 @@ export default function RootLayout({
         <meta name="pinterest-rich-pin" content="true" />
       </head>
       <body className={`${playfair.variable} ${montserrat.variable} font-sans antialiased bg-neutral-50`}>
+        <Analytics />
         <Navigation />
         {children}
         <ScrollToTop />
