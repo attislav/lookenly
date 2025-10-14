@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import ScrollToTop from "@/components/ScrollToTop";
 import Analytics from "@/components/Analytics";
+import { siteConfig } from "@/config/site.config";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -18,21 +19,22 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Lookenly | Fashion, Beauty & Lifestyle Blog",
-  description: "Entdecke inspirierende Fashion-Trends, Beauty-Tipps und Lifestyle-Inspiration. Lookenly - Dein Blog für zeitlosen Stil und elegante Lebensart.",
-  keywords: ["Fashion Blog", "Beauty Tipps", "Lifestyle", "Style Inspiration", "Mode Trends", "Lookenly", "Pinterest Fashion"],
-  authors: [{ name: "Lookenly Team" }],
+  title: siteConfig.seo.defaultTitle,
+  description: siteConfig.seo.defaultDescription,
+  keywords: ["Fashion Blog", "Beauty Tips", "Lifestyle", "Style Inspiration", siteConfig.site.name],
+  authors: [{ name: `${siteConfig.site.name} Team` }],
   openGraph: {
-    title: "Lookenly | Fashion, Beauty & Lifestyle Blog",
-    description: "Entdecke inspirierende Fashion-Trends, Beauty-Tipps und Lifestyle-Inspiration für zeitlosen Stil.",
+    title: siteConfig.seo.defaultTitle,
+    description: siteConfig.seo.defaultDescription,
     type: "website",
-    siteName: "Lookenly",
-    locale: "de_DE",
+    siteName: siteConfig.site.name,
+    locale: siteConfig.site.locale,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lookenly | Fashion, Beauty & Lifestyle Blog",
-    description: "Entdecke inspirierende Fashion-Trends, Beauty-Tipps und Lifestyle-Inspiration.",
+    title: siteConfig.seo.defaultTitle,
+    description: siteConfig.seo.defaultDescription,
+    handle: siteConfig.seo.twitterHandle,
   },
   robots: {
     index: true,
@@ -55,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang={siteConfig.site.language}>
       <head>
         {/* Pinterest Domain Verification - Optional */}
         <meta name="pinterest-rich-pin" content="true" />
@@ -70,41 +72,37 @@ export default function RootLayout({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
               <div>
                 <h3 className="font-playfair text-2xl font-bold mb-4 text-amber-100 tracking-wider">
-                  Lookenly
+                  {siteConfig.site.name}
                 </h3>
                 <p className="text-neutral-400 text-sm leading-relaxed">
-                  Where sophistication meets style
+                  {siteConfig.site.tagline}
                 </p>
               </div>
-              <div>
-                <h4 className="font-montserrat text-sm font-semibold mb-4 tracking-widest uppercase text-neutral-200">Categories</h4>
-                <ul className="space-y-3 text-sm">
-                  <li><a href="/category/fashion" className="text-neutral-400 hover:text-amber-200 transition-colors duration-200">Fashion</a></li>
-                  <li><a href="/category/beauty" className="text-neutral-400 hover:text-amber-200 transition-colors duration-200">Beauty</a></li>
-                  <li><a href="/category/lifestyle" className="text-neutral-400 hover:text-amber-200 transition-colors duration-200">Lifestyle</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-montserrat text-sm font-semibold mb-4 tracking-widest uppercase text-neutral-200">Connect</h4>
-                <div className="flex gap-6 text-sm">
-                  <a href="#" className="text-neutral-400 hover:text-amber-200 transition-colors duration-200">Pinterest</a>
-                  <a href="#" className="text-neutral-400 hover:text-amber-200 transition-colors duration-200">Instagram</a>
+              {siteConfig.navigation.footer.sections.map((section, index) => (
+                <div key={section.title}>
+                  <h4 className="font-montserrat text-sm font-semibold mb-4 tracking-widest uppercase text-neutral-200">
+                    {section.title}
+                  </h4>
+                  <ul className="space-y-3 text-sm">
+                    {section.links.map((link) => (
+                      <li key={link.href}>
+                        <a
+                          href={link.href}
+                          className="text-neutral-400 hover:text-amber-200 transition-colors duration-200"
+                          {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
+              ))}
             </div>
             <div className="border-t border-neutral-800 pt-8">
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-4">
-                <a href="/privacy" className="text-neutral-400 hover:text-amber-200 transition-colors duration-200 text-sm">
-                  Privacy Policy
-                </a>
-                <a href="/terms" className="text-neutral-400 hover:text-amber-200 transition-colors duration-200 text-sm">
-                  Terms of Service
-                </a>
-                <a href="/disclaimer" className="text-neutral-400 hover:text-amber-200 transition-colors duration-200 text-sm">
-                  Disclaimer
-                </a>
-              </div>
-              <p className="text-neutral-500 text-xs tracking-wider text-center">&copy; 2025 Lookenly. All rights reserved.</p>
+              <p className="text-neutral-500 text-xs tracking-wider text-center">
+                &copy; {new Date().getFullYear()} {siteConfig.site.name}. All rights reserved.
+              </p>
             </div>
           </div>
         </footer>

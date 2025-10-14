@@ -3,6 +3,7 @@ import Image from 'next/image';
 import PinterestImage from '@/components/PinterestImage';
 import { getPosts, getCategories } from '@/lib/wordpress';
 import { Post, Category } from '@/types';
+import { siteConfig } from '@/config/site.config';
 
 // Enable ISR (Incremental Static Regeneration)
 export const revalidate = 60; // seconds
@@ -75,8 +76,8 @@ export default async function Home() {
       {/* Hero Section - Minimalistisch & Elegant */}
       <section className="relative bg-black text-white py-32 md:py-48 overflow-hidden">
         <Image
-          src="/images/hero-bg.jpg"
-          alt="Lookenly Hero"
+          src={siteConfig.hero.backgroundImage}
+          alt={`${siteConfig.site.name} Hero`}
           fill
           className="object-cover opacity-40"
           priority
@@ -84,18 +85,20 @@ export default async function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/80"></div>
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-playfair text-6xl md:text-8xl font-bold mb-8 tracking-tight">
-            Lookenly
+            {siteConfig.hero.title}
           </h1>
           <div className="w-24 h-px bg-amber-200 mx-auto mb-8"></div>
           <p className="font-montserrat text-lg md:text-xl tracking-widest uppercase text-neutral-300 mb-12">
-            Where Sophistication Meets Style
+            {siteConfig.hero.subtitle}
           </p>
-          <Link
-            href="#featured"
-            className="inline-block border border-amber-200 text-amber-200 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-amber-200 hover:text-black transition-all duration-300"
-          >
-            Discover
-          </Link>
+          {siteConfig.hero.cta && (
+            <Link
+              href={siteConfig.hero.cta.href}
+              className="inline-block border border-amber-200 text-amber-200 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-amber-200 hover:text-black transition-all duration-300"
+            >
+              {siteConfig.hero.cta.text}
+            </Link>
+          )}
         </div>
       </section>
 
@@ -216,12 +219,11 @@ export default async function Home() {
       <section className="py-32 bg-neutral-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
-            The Story Behind Lookenly
+            The Story Behind {siteConfig.site.name}
           </h2>
           <div className="w-16 h-px bg-amber-200 mx-auto mb-8"></div>
           <p className="font-montserrat text-base text-neutral-300 leading-relaxed mb-12 max-w-2xl mx-auto">
-            A curated space dedicated to the art of refined living, where every detail
-            tells a story of timeless elegance and sophisticated style.
+            {siteConfig.site.description}
           </p>
           <Link
             href="/about"
