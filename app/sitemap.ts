@@ -22,12 +22,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Alle Posts holen
   const posts = await getPosts();
-  const postPages = posts.map((post) => ({
-    url: `${baseUrl}/post/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
+  const postPages = posts.map((post) => {
+    // URL mit Kategorie: /fashion/post-slug statt /post/post-slug
+    const category = post.categories.nodes[0]?.slug || 'uncategorized';
+    return {
+      url: `${baseUrl}/${category}/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    };
+  });
 
   // Alle Kategorien holen
   const categories = await getCategories();
