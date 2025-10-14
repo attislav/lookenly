@@ -230,12 +230,11 @@ export default function TermsPage() {
               10. Governing Law and Jurisdiction
             </h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
-              These Terms shall be governed by and construed in accordance with the laws of [Your State/Country],
+              These Terms shall be governed by and construed in accordance with the laws of Germany,
               without regard to its conflict of law provisions.
             </p>
             <p className="text-neutral-700 leading-relaxed mb-4">
-              Any disputes arising from these Terms or your use of the website shall be resolved in the courts
-              located in [Your Jurisdiction].
+              Any disputes arising from these Terms or your use of the website shall be resolved in the German courts.
             </p>
           </section>
 
@@ -272,9 +271,12 @@ export default function TermsPage() {
             </p>
             <div className="text-neutral-700 space-y-2 pl-4">
               <p>
+                <strong>Company:</strong> Triple A Digital
+              </p>
+              <p>
                 <strong>Email:</strong>{' '}
-                <a href="mailto:legal@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
-                  legal@lookenly.com
+                <a href="mailto:hey@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
+                  hey@lookenly.com
                 </a>
               </p>
               <p><strong>Website:</strong> lookenly.com</p>

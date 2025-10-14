@@ -263,8 +263,8 @@ export default function PrivacyPage() {
             </ul>
             <p className="text-neutral-700 leading-relaxed mb-4">
               To exercise these rights, please contact us at:{' '}
-              <a href="mailto:privacy@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
-                privacy@lookenly.com
+              <a href="mailto:hey@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
+                hey@lookenly.com
               </a>
             </p>
 
@@ -334,9 +334,12 @@ export default function PrivacyPage() {
             </p>
             <div className="text-neutral-700 space-y-2 pl-4">
               <p>
+                <strong>Company:</strong> Triple A Digital
+              </p>
+              <p>
                 <strong>Email:</strong>{' '}
-                <a href="mailto:privacy@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
-                  privacy@lookenly.com
+                <a href="mailto:hey@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
+                  hey@lookenly.com
                 </a>
               </p>
               <p><strong>Website:</strong> lookenly.com</p>

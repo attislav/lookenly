@@ -145,8 +145,8 @@ export default function DisclaimerPage() {
             </p>
             <p className="text-neutral-700 leading-relaxed mb-4">
               If you believe any content on our site infringes your copyright, please contact us at:{' '}
-              <a href="mailto:copyright@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
-                copyright@lookenly.com
+              <a href="mailto:hey@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
+                hey@lookenly.com
               </a>
             </p>
           </section>
@@ -235,9 +235,12 @@ export default function DisclaimerPage() {
             </p>
             <div className="text-neutral-700 space-y-2 pl-4">
               <p>
+                <strong>Company:</strong> Triple A Digital
+              </p>
+              <p>
                 <strong>Email:</strong>{' '}
-                <a href="mailto:contact@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
-                  contact@lookenly.com
+                <a href="mailto:hey@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
+                  hey@lookenly.com
                 </a>
               </p>
               <p><strong>Website:</strong> lookenly.com</p>
