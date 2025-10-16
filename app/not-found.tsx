@@ -13,7 +13,7 @@ export default function NotFound() {
         <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
 
         {/* Message */}
-        <h2 className="font-playfair text-3xl md:text-5xl font-bold text-text-primary mb-6">
+        <h2 className="font-playfair text-3xl md:text-5xl font-bold text-gray-900 mb-6">
           Page Not Found
         </h2>
 
@@ -33,7 +33,7 @@ export default function NotFound() {
 
           <Link
             href="/about"
-            className="inline-block border border-primary text-text-primary px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
+            className="inline-block border border-primary text-gray-900 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
           >
             About Us
           </Link>

@@ -79,7 +79,7 @@ export default function SearchBar() {
               {/* Close Button */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 text-neutral-400 hover:text-text-primary transition-colors"
+                className="absolute top-4 right-4 text-neutral-400 hover:text-gray-900 transition-colors"
                 aria-label="Close search"
               >
                 <svg

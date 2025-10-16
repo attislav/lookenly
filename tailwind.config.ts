@@ -11,11 +11,11 @@ const config: Config = {
     extend: {
       colors: {
         // Dynamische Farben aus siteConfig
-        primary: siteConfig.brand.colors.primary,
-        secondary: siteConfig.brand.colors.secondary,
-        accent: siteConfig.brand.colors.accent,
-        'bg-custom': siteConfig.brand.colors.background,
-        'text-primary': siteConfig.brand.colors.text,
+        primary: siteConfig.brand.colors.primary,        // #000000 - Black
+        secondary: siteConfig.brand.colors.secondary,    // #f5f5f4 - Off-white
+        accent: siteConfig.brand.colors.accent,          // #f59e0b - Gold
+        'bg-custom': siteConfig.brand.colors.background, // #fafaf9 - Light beige
+        'text-dark': siteConfig.brand.colors.text,       // #171717 - Dark text
       },
       fontFamily: {
         playfair: ['var(--font-playfair)', 'serif'],

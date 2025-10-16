@@ -16,7 +16,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="font-playfair text-2xl font-bold text-text-primary tracking-wider hover:text-primary transition-colors duration-300">
+            <span className="font-playfair text-2xl font-bold text-gray-900 tracking-wider hover:text-primary transition-colors duration-300">
               {siteConfig.brand.logo?.text || siteConfig.site.name}
             </span>
           </Link>

@@ -31,7 +31,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       <div className="bg-bg-custom border-b border-secondary py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="font-playfair text-4xl md:text-5xl font-bold text-text-primary mb-4">
+            <h1 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Suchergebnisse
             </h1>
             {query && (
@@ -66,7 +66,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                 d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <h2 className="font-playfair text-2xl font-bold text-text-primary mb-3">
+            <h2 className="font-playfair text-2xl font-bold text-gray-900 mb-3">
               Keine Ergebnisse gefunden
             </h2>
             <p className="font-montserrat text-neutral-600 mb-8 max-w-md mx-auto">
@@ -74,7 +74,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             </p>
             <Link
               href="/"
-              className="inline-block border border-primary text-text-primary px-8 py-3 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
+              className="inline-block border border-primary text-gray-900 px-8 py-3 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
             >
               Zurück zur Startseite
             </Link>
@@ -127,7 +127,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
                     {/* Title */}
                     <h2
-                      className="font-playfair text-xl font-bold mb-3 text-text-primary group-hover:text-primary transition-colors line-clamp-2"
+                      className="font-playfair text-xl font-bold mb-3 text-gray-900 group-hover:text-primary transition-colors line-clamp-2"
                       dangerouslySetInnerHTML={{ __html: post.title }}
                     />
 

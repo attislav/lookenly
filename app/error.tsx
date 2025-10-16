@@ -39,7 +39,7 @@ export default function Error({
         <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
 
         {/* Message */}
-        <h1 className="font-playfair text-4xl md:text-5xl font-bold text-text-primary mb-6">
+        <h1 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Something Went Wrong
         </h1>
 
@@ -68,7 +68,7 @@ export default function Error({
 
           <Link
             href="/"
-            className="inline-block border border-primary text-text-primary px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
+            className="inline-block border border-primary text-gray-900 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
           >
             Back to Home
           </Link>

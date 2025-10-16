@@ -105,7 +105,7 @@ export default async function Home() {
       {/* Editorial Quote Section */}
       <section className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <p className="font-playfair text-3xl md:text-4xl italic text-text-primary leading-relaxed">
+          <p className="font-playfair text-3xl md:text-4xl italic text-gray-900 leading-relaxed">
             "Fashion is the armor to survive the reality of everyday life"
           </p>
           <div className="mt-6 text-neutral-500 font-montserrat text-sm tracking-widest uppercase">
@@ -117,7 +117,7 @@ export default async function Home() {
       {/* Kategorien Section - Minimalistisch */}
       <section className="py-24 bg-bg-custom">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-playfair text-5xl md:text-6xl font-bold text-center mb-4 text-text-primary">
+          <h2 className="font-playfair text-5xl md:text-6xl font-bold text-center mb-4 text-gray-900">
             Collections
           </h2>
           <div className="w-16 h-px bg-primary mx-auto mb-20"></div>
@@ -143,7 +143,7 @@ export default async function Home() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
                 </div>
                 <div className="p-8 text-center">
-                  <h3 className="font-playfair text-3xl font-bold mb-2 text-text-primary group-hover:text-primary transition-colors">
+                  <h3 className="font-playfair text-3xl font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors">
                     {cat.name}
                   </h3>
                   <p className="font-montserrat text-xs tracking-widest uppercase text-neutral-500">
@@ -159,7 +159,7 @@ export default async function Home() {
       {/* Featured Posts Section - Editorial Style */}
       <section id="featured" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-playfair text-5xl md:text-6xl font-bold text-center mb-4 text-text-primary">
+          <h2 className="font-playfair text-5xl md:text-6xl font-bold text-center mb-4 text-gray-900">
             Latest Stories
           </h2>
           <div className="w-16 h-px bg-primary mx-auto mb-20"></div>
@@ -185,12 +185,12 @@ export default async function Home() {
                   )}
                   <div>
                     {post.categories.nodes.length > 0 && (
-                      <span className="inline-block font-montserrat text-xs tracking-widest uppercase text-primary mb-3">
+                      <span className="inline-block font-montserrat text-xs tracking-widest uppercase text-amber-700 font-bold mb-3">
                         {post.categories.nodes[0].name}
                       </span>
                     )}
                     <h3
-                      className="font-playfair text-2xl font-bold mb-3 text-text-primary group-hover:text-primary transition-colors line-clamp-2"
+                      className="font-playfair text-2xl font-bold mb-3 text-gray-900 group-hover:text-primary transition-colors line-clamp-2"
                       dangerouslySetInnerHTML={{ __html: post.title }}
                     />
                     <div
@@ -237,7 +237,7 @@ export default async function Home() {
       {/* Newsletter Section - Minimalistisch */}
       <section className="py-24 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-text-primary">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Stay Inspired
           </h2>
           <p className="font-montserrat text-sm text-neutral-600 mb-10 tracking-wide">

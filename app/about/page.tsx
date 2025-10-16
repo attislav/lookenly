@@ -35,7 +35,7 @@ export default function About() {
           {/* Content */}
           <div className="space-y-12">
             <div className="text-center max-w-2xl mx-auto">
-              <h2 className="font-playfair text-4xl font-bold mb-6 text-text-primary">
+              <h2 className="font-playfair text-4xl font-bold mb-6 text-gray-900">
                 Hi, I'm Sophia Laurent
               </h2>
               <p className="font-montserrat text-base text-neutral-600 leading-relaxed mb-6">
@@ -48,7 +48,7 @@ export default function About() {
             {/* Story Section */}
             <div className="max-w-3xl mx-auto space-y-8">
               <div>
-                <h3 className="font-playfair text-2xl font-bold mb-4 text-text-primary">
+                <h3 className="font-playfair text-2xl font-bold mb-4 text-gray-900">
                   My Story
                 </h3>
                 <p className="font-montserrat text-base text-neutral-600 leading-relaxed mb-4">
@@ -75,7 +75,7 @@ export default function About() {
               </div>
 
               <div className="border-t border-secondary pt-8">
-                <h3 className="font-playfair text-2xl font-bold mb-4 text-text-primary">
+                <h3 className="font-playfair text-2xl font-bold mb-4 text-gray-900">
                   Why I Write
                 </h3>
                 <p className="font-montserrat text-base text-neutral-600 leading-relaxed mb-4">
@@ -94,28 +94,28 @@ export default function About() {
               </div>
 
               <div className="border-t border-secondary pt-8">
-                <h3 className="font-playfair text-2xl font-bold mb-4 text-text-primary">
+                <h3 className="font-playfair text-2xl font-bold mb-4 text-gray-900">
                   What Inspires Me
                 </h3>
                 <div className="space-y-3">
                   <p className="font-montserrat text-base text-neutral-600 leading-relaxed">
-                    <span className="font-semibold text-text-primary">Morning light</span> streaming
+                    <span className="font-semibold text-gray-900">Morning light</span> streaming
                     through linen curtains, the way it transforms an ordinary room into something sacred.
                   </p>
                   <p className="font-montserrat text-base text-neutral-600 leading-relaxed">
-                    <span className="font-semibold text-text-primary">Old Parisian cafés</span> where
+                    <span className="font-semibold text-gray-900">Old Parisian cafés</span> where
                     time slows down, and people-watching becomes an art form.
                   </p>
                   <p className="font-montserrat text-base text-neutral-600 leading-relaxed">
-                    <span className="font-semibold text-text-primary">Vintage silk scarves</span> from
+                    <span className="font-semibold text-gray-900">Vintage silk scarves</span> from
                     flea markets—each one with a story to tell.
                   </p>
                   <p className="font-montserrat text-base text-neutral-600 leading-relaxed">
-                    <span className="font-semibold text-text-primary">The Mediterranean coast</span>,
+                    <span className="font-semibold text-gray-900">The Mediterranean coast</span>,
                     where simplicity and beauty coexist effortlessly.
                   </p>
                   <p className="font-montserrat text-base text-neutral-600 leading-relaxed">
-                    <span className="font-semibold text-text-primary">Women who own their presence</span>—not
+                    <span className="font-semibold text-gray-900">Women who own their presence</span>—not
                     through perfection, but through quiet confidence.
                   </p>
                 </div>
@@ -124,7 +124,7 @@ export default function About() {
 
             {/* Philosophy */}
             <div className="border-t border-secondary pt-12">
-              <h3 className="font-playfair text-3xl font-bold mb-6 text-center text-text-primary">
+              <h3 className="font-playfair text-3xl font-bold mb-6 text-center text-gray-900">
                 Our Philosophy
               </h3>
               <div className="grid md:grid-cols-3 gap-8 text-center">
@@ -132,7 +132,7 @@ export default function About() {
                   <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
                     <div className="w-px h-12 bg-primary"></div>
                   </div>
-                  <h4 className="font-montserrat text-sm tracking-widest uppercase text-text-primary mb-3">
+                  <h4 className="font-montserrat text-sm tracking-widest uppercase text-gray-900 mb-3">
                     Timeless
                   </h4>
                   <p className="font-montserrat text-sm text-neutral-600 leading-relaxed">
@@ -144,7 +144,7 @@ export default function About() {
                   <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
                     <div className="w-px h-12 bg-primary"></div>
                   </div>
-                  <h4 className="font-montserrat text-sm tracking-widest uppercase text-text-primary mb-3">
+                  <h4 className="font-montserrat text-sm tracking-widest uppercase text-gray-900 mb-3">
                     Refined
                   </h4>
                   <p className="font-montserrat text-sm text-neutral-600 leading-relaxed">
@@ -156,7 +156,7 @@ export default function About() {
                   <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
                     <div className="w-px h-12 bg-primary"></div>
                   </div>
-                  <h4 className="font-montserrat text-sm tracking-widest uppercase text-text-primary mb-3">
+                  <h4 className="font-montserrat text-sm tracking-widest uppercase text-gray-900 mb-3">
                     Inspiring
                   </h4>
                   <p className="font-montserrat text-sm text-neutral-600 leading-relaxed">
@@ -169,7 +169,7 @@ export default function About() {
 
             {/* What You'll Find */}
             <div className="border-t border-secondary pt-12">
-              <h3 className="font-playfair text-3xl font-bold mb-10 text-center text-text-primary">
+              <h3 className="font-playfair text-3xl font-bold mb-10 text-center text-gray-900">
                 What You'll Discover
               </h3>
               <div className="space-y-6 max-w-2xl mx-auto">
@@ -178,7 +178,7 @@ export default function About() {
                     <div className="w-1 h-1 bg-primary mt-2"></div>
                   </div>
                   <div>
-                    <h4 className="font-montserrat text-sm tracking-widest uppercase text-text-primary mb-2">
+                    <h4 className="font-montserrat text-sm tracking-widest uppercase text-gray-900 mb-2">
                       Fashion
                     </h4>
                     <p className="font-montserrat text-sm text-neutral-600 leading-relaxed">
@@ -192,7 +192,7 @@ export default function About() {
                     <div className="w-1 h-1 bg-primary mt-2"></div>
                   </div>
                   <div>
-                    <h4 className="font-montserrat text-sm tracking-widest uppercase text-text-primary mb-2">
+                    <h4 className="font-montserrat text-sm tracking-widest uppercase text-gray-900 mb-2">
                       Beauty
                     </h4>
                     <p className="font-montserrat text-sm text-neutral-600 leading-relaxed">
@@ -206,7 +206,7 @@ export default function About() {
                     <div className="w-1 h-1 bg-primary mt-2"></div>
                   </div>
                   <div>
-                    <h4 className="font-montserrat text-sm tracking-widest uppercase text-text-primary mb-2">
+                    <h4 className="font-montserrat text-sm tracking-widest uppercase text-gray-900 mb-2">
                       Lifestyle
                     </h4>
                     <p className="font-montserrat text-sm text-neutral-600 leading-relaxed">
@@ -253,7 +253,7 @@ export default function About() {
       {/* Newsletter Section */}
       <section className="py-24 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="font-playfair text-4xl font-bold mb-6 text-text-primary">
+          <h3 className="font-playfair text-4xl font-bold mb-6 text-gray-900">
             Stay Inspired
           </h3>
           <p className="font-montserrat text-sm text-neutral-600 mb-10 tracking-wide">

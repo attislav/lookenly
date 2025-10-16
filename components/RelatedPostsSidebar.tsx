@@ -16,7 +16,7 @@ export default function RelatedPostsSidebar({ posts, categoryName }: RelatedPost
     <aside className="lg:sticky lg:top-24 lg:self-start">
       {/* Header */}
       <div className="mb-8">
-        <h3 className="font-playfair text-2xl font-bold text-text-primary mb-2">
+        <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-2">
           More in {categoryName}
         </h3>
         <div className="w-12 h-px bg-primary"></div>
@@ -46,7 +46,7 @@ export default function RelatedPostsSidebar({ posts, categoryName }: RelatedPost
             {/* Title on the Right */}
             <div className="flex-1 min-w-0">
               <h4
-                className="font-playfair text-sm font-bold text-text-primary group-hover:text-primary transition-colors line-clamp-3 leading-tight"
+                className="font-playfair text-sm font-bold text-gray-900 group-hover:text-primary transition-colors line-clamp-3 leading-tight"
                 dangerouslySetInnerHTML={{ __html: post.title }}
               />
             </div>
@@ -58,7 +58,7 @@ export default function RelatedPostsSidebar({ posts, categoryName }: RelatedPost
       <div className="mt-10 pt-8 border-t border-secondary">
         <Link
           href={`/category/${categoryName.toLowerCase()}`}
-          className="inline-flex items-center gap-2 font-montserrat text-sm tracking-widest uppercase text-text-primary hover:text-primary transition-colors group"
+          className="inline-flex items-center gap-2 font-montserrat text-sm tracking-widest uppercase text-gray-900 hover:text-primary transition-colors group"
         >
           View All {categoryName}
           <svg

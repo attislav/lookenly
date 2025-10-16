@@ -67,7 +67,7 @@ export default async function TagPage({ params }: TagPageProps) {
             </p>
             <Link
               href="/"
-              className="inline-block border border-primary text-text-primary px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
+              className="inline-block border border-primary text-gray-900 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
             >
               Back to Home
             </Link>
@@ -126,7 +126,7 @@ export default async function TagPage({ params }: TagPageProps) {
                     </span>
                   )}
                   <h2
-                    className="font-playfair text-2xl font-bold mb-3 text-text-primary group-hover:text-primary transition-colors line-clamp-2"
+                    className="font-playfair text-2xl font-bold mb-3 text-gray-900 group-hover:text-primary transition-colors line-clamp-2"
                     dangerouslySetInnerHTML={{ __html: post.title }}
                   />
                   <div
@@ -152,7 +152,7 @@ export default async function TagPage({ params }: TagPageProps) {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <Link
             href="/"
-            className="inline-block border border-primary text-text-primary px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
+            className="inline-block border border-primary text-gray-900 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
           >
             Explore All Stories
           </Link>

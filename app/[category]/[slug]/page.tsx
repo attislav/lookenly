@@ -145,7 +145,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
             {/* Title */}
             <h1
-              className="font-playfair text-4xl md:text-6xl font-bold mb-6 text-text-primary leading-tight"
+              className="font-playfair text-4xl md:text-6xl font-bold mb-6 text-gray-900 leading-tight"
               dangerouslySetInnerHTML={{ __html: post.title }}
             />
 
@@ -187,7 +187,7 @@ export default async function PostPage({ params }: PostPageProps) {
               postUrl={currentUrl}
               postTitle={post.title}
               className="prose prose-xl max-w-none blog-content
-                prose-headings:font-playfair prose-headings:text-text-primary prose-headings:leading-tight
+                prose-headings:font-playfair prose-headings:text-gray-900 prose-headings:leading-tight
                 prose-h1:text-5xl prose-h1:font-bold prose-h1:mt-16 prose-h1:mb-8 prose-h1:leading-tight
                 prose-h2:text-4xl prose-h2:font-bold prose-h2:mt-14 prose-h2:mb-6 prose-h2:leading-tight
                 prose-h3:text-3xl prose-h3:font-bold prose-h3:mt-10 prose-h3:mb-5 prose-h3:leading-snug
@@ -196,7 +196,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 prose-h6:text-lg prose-h6:font-semibold prose-h6:mt-6 prose-h6:mb-3 prose-h6:uppercase prose-h6:tracking-wider
                 prose-p:font-montserrat prose-p:text-neutral-800 prose-p:text-lg prose-p:leading-relaxed prose-p:mb-6
                 prose-a:text-primary prose-a:font-medium prose-a:underline prose-a:decoration-primary/30 hover:prose-a:decoration-primary prose-a:transition-colors
-                prose-strong:text-text-primary prose-strong:font-semibold
+                prose-strong:text-gray-900 prose-strong:font-semibold
                 prose-em:text-neutral-700 prose-em:italic
                 prose-img:rounded-none prose-img:w-full prose-img:my-10 prose-img:cursor-pointer
                 prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:pr-6 prose-blockquote:py-4 prose-blockquote:italic prose-blockquote:text-neutral-600 prose-blockquote:text-xl prose-blockquote:leading-relaxed prose-blockquote:my-10
@@ -224,7 +224,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     </div>
                   )}
                   <div>
-                    <h3 className="font-playfair text-2xl font-bold mb-3 text-text-primary">
+                    <h3 className="font-playfair text-2xl font-bold mb-3 text-gray-900">
                       {post.author.node.name}
                     </h3>
                     <p className="font-montserrat text-sm text-neutral-600 leading-relaxed">
@@ -251,7 +251,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Link
             href="/"
-            className="inline-block border border-primary text-text-primary px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
+            className="inline-block border border-primary text-gray-900 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
           >
             Back to Stories
           </Link>

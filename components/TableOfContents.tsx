@@ -106,7 +106,7 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
               d="M4 6h16M4 12h16M4 18h7"
             />
           </svg>
-          <span className="font-montserrat text-sm font-semibold text-text-primary tracking-wide uppercase">
+          <span className="font-montserrat text-sm font-semibold text-gray-900 tracking-wide uppercase">
             {tocItems.length} {tocItems.length === 1 ? 'Section' : 'Sections'}
           </span>
         </div>

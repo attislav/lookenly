@@ -131,11 +131,11 @@ export interface SiteConfig {
  */
 export const siteConfig: SiteConfig = {
   site: {
-    name: "{{SITE_NAME}}",
-    tagline: "{{SITE_TAGLINE}}",
-    description: "{{SITE_DESCRIPTION}}",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "{{SITE_URL}}",
-    wordpressUrl: process.env.NEXT_PUBLIC_WORDPRESS_API_URL?.replace('/graphql', '') || "{{WORDPRESS_URL}}",
+    name: "Lookenly",
+    tagline: "Where Style Meets Story",
+    description: "Your daily dose of fashion inspiration, beauty tips, and lifestyle trends. Join us as we explore the latest in style and substance.",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://lookenly.com",
+    wordpressUrl: process.env.NEXT_PUBLIC_WORDPRESS_API_URL?.replace('/graphql', '') || "https://wp.lookenly.com",
     language: "en",
     locale: "en_US",
   },
@@ -153,8 +153,8 @@ export const siteConfig: SiteConfig = {
       bodyFont: "Montserrat",
     },
     logo: {
-      text: "{{SITE_NAME_UPPER}}",
-      subtitle: "{{SITE_TAGLINE}}",
+      text: "LOOKENLY",
+      subtitle: "Where Style Meets Story",
     },
   },
 
@@ -199,8 +199,8 @@ export const siteConfig: SiteConfig = {
         {
           title: "Follow",
           links: [
-            { label: "Pinterest", href: "{{PINTEREST_URL}}", external: true },
-            { label: "Instagram", href: "{{INSTAGRAM_URL}}", external: true },
+            { label: "Pinterest", href: "https://pinterest.com/lookenly", external: true },
+            { label: "Instagram", href: "https://instagram.com/lookenly", external: true },
           ],
         },
       ],
@@ -208,8 +208,8 @@ export const siteConfig: SiteConfig = {
   },
 
   social: {
-    pinterest: "{{PINTEREST_URL}}",
-    instagram: "{{INSTAGRAM_URL}}",
+    pinterest: "https://pinterest.com/lookenly",
+    instagram: "https://instagram.com/lookenly",
     // facebook: "",
     // twitter: "",
     // youtube: "",
@@ -224,10 +224,10 @@ export const siteConfig: SiteConfig = {
   },
 
   legal: {
-    companyName: "{{COMPANY_NAME}}",
-    contactEmail: "{{CONTACT_EMAIL}}",
-    country: "{{COUNTRY}}",
-    jurisdiction: "{{JURISDICTION}}",
+    companyName: "Lookenly",
+    contactEmail: "hey@lookenly.com",
+    country: "United States",
+    jurisdiction: "United States",
   },
 
   hero: {
@@ -241,10 +241,10 @@ export const siteConfig: SiteConfig = {
   },
 
   seo: {
-    titleTemplate: "%s | {{SITE_NAME}}",
-    defaultTitle: "{{SITE_NAME}} - {{SITE_TAGLINE}}",
-    defaultDescription: "{{SITE_DESCRIPTION}}",
-    // twitterHandle: "@{{SITE_NAME}}",
+    titleTemplate: "%s | Lookenly",
+    defaultTitle: "Lookenly - Where Style Meets Story",
+    defaultDescription: "Your daily dose of fashion inspiration, beauty tips, and lifestyle trends. Join us as we explore the latest in style and substance.",
+    // twitterHandle: "@lookenly",
   },
 };
 

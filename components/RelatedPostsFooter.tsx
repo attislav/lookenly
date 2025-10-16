@@ -28,7 +28,7 @@ export default function RelatedPostsFooter({ posts }: RelatedPostsFooterProps) {
     <section className="mt-16 pt-12 border-t border-secondary">
       {/* Heading */}
       <div className="text-center mb-10">
-        <h2 className="font-playfair text-3xl md:text-4xl font-bold text-text-primary mb-3">
+        <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-3">
           Das könnte dich auch interessieren
         </h2>
         <p className="text-stone-600 font-montserrat">
@@ -65,7 +65,7 @@ export default function RelatedPostsFooter({ posts }: RelatedPostsFooterProps) {
 
             {/* Content */}
             <div>
-              <h3 className="font-playfair text-xl font-semibold text-text-primary mb-2 group-hover:text-accent transition-colors line-clamp-2">
+              <h3 className="font-playfair text-xl font-semibold text-gray-900 mb-2 group-hover:text-accent transition-colors line-clamp-2">
                 {post.title}
               </h3>
 

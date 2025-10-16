@@ -2,6 +2,12 @@
 
 Eine moderne, bildlastige Fashion, Beauty & Lifestyle Website mit Headless WordPress als CMS und Next.js als Frontend.
 
+## Repository
+
+**GitHub:** https://github.com/attislav/lookenly.git
+
+Das Lookenly-Projekt ist ein eleganter Fashion, Beauty & Lifestyle Blog mit Pinterest-Optimierung.
+
 ## Quick Start
 
 1. **WordPress URL eintragen** in `.env.local`:
@@ -35,5 +41,5 @@ Eine moderne, bildlastige Fashion, Beauty & Lifestyle Website mit Headless WordP
 ## Deployment
 
 Auf Vercel deployen - einfach GitHub Repo verbinden!
-s
+
 Mehr Infos in der ausführlichen Dokumentation im Projekt.
