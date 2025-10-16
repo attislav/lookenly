@@ -41,12 +41,12 @@ export default async function TagPage({ params }: TagPageProps) {
 
   if (posts.length === 0) {
     return (
-      <div className="min-h-screen bg-neutral-50">
+      <div className="min-h-screen bg-bg-custom">
         {/* Hero Section */}
-        <section className="bg-neutral-900 text-white py-24">
+        <section className="bg-primary text-white py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-block px-4 py-2 border border-amber-200 mb-6">
-              <span className="font-montserrat text-sm tracking-widest uppercase text-amber-200">
+            <div className="inline-block px-4 py-2 border border-accent mb-6">
+              <span className="font-montserrat text-sm tracking-widest uppercase text-accent">
                 Tag
               </span>
             </div>
@@ -67,7 +67,7 @@ export default async function TagPage({ params }: TagPageProps) {
             </p>
             <Link
               href="/"
-              className="inline-block border border-neutral-900 text-neutral-900 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-neutral-900 hover:text-white transition-all duration-300"
+              className="inline-block border border-primary text-text-primary px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
             >
               Back to Home
             </Link>
@@ -78,12 +78,12 @@ export default async function TagPage({ params }: TagPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-bg-custom">
       {/* Hero Section */}
-      <section className="bg-neutral-900 text-white py-24">
+      <section className="bg-primary text-white py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block px-4 py-2 border border-amber-200 mb-6">
-            <span className="font-montserrat text-sm tracking-widest uppercase text-amber-200">
+          <div className="inline-block px-4 py-2 border border-accent mb-6">
+            <span className="font-montserrat text-sm tracking-widest uppercase text-accent">
               Tag
             </span>
           </div>
@@ -107,7 +107,7 @@ export default async function TagPage({ params }: TagPageProps) {
                 className="group"
               >
                 {post.featuredImage && (
-                  <div className="aspect-[3/2] relative overflow-hidden bg-neutral-100 mb-6">
+                  <div className="aspect-[3/2] relative overflow-hidden bg-secondary mb-6">
                     <PinterestImage
                       src={post.featuredImage.node.sourceUrl}
                       alt={post.featuredImage.node.altText || post.title}
@@ -121,12 +121,12 @@ export default async function TagPage({ params }: TagPageProps) {
                 )}
                 <div>
                   {post.categories.nodes.length > 0 && (
-                    <span className="inline-block font-montserrat text-xs tracking-widest uppercase text-amber-900 mb-3">
+                    <span className="inline-block font-montserrat text-xs tracking-widest uppercase text-primary mb-3">
                       {post.categories.nodes[0].name}
                     </span>
                   )}
                   <h2
-                    className="font-playfair text-2xl font-bold mb-3 text-neutral-900 group-hover:text-amber-900 transition-colors line-clamp-2"
+                    className="font-playfair text-2xl font-bold mb-3 text-text-primary group-hover:text-primary transition-colors line-clamp-2"
                     dangerouslySetInnerHTML={{ __html: post.title }}
                   />
                   <div
@@ -148,11 +148,11 @@ export default async function TagPage({ params }: TagPageProps) {
       </section>
 
       {/* Back to Home */}
-      <section className="py-16 bg-neutral-50">
+      <section className="py-16 bg-bg-custom">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <Link
             href="/"
-            className="inline-block border border-neutral-900 text-neutral-900 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-neutral-900 hover:text-white transition-all duration-300"
+            className="inline-block border border-primary text-text-primary px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
           >
             Explore All Stories
           </Link>

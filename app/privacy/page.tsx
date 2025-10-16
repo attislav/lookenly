@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import { siteConfig } from '@/config/site.config';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Lookenly',
-  description: 'Privacy Policy for Lookenly - Learn how we collect, use, and protect your personal information.',
+  title: `Privacy Policy | ${siteConfig.site.name}`,
+  description: `Privacy Policy for ${siteConfig.site.name} - Learn how we collect, use, and protect your personal information.`,
   robots: {
     index: false,
     follow: true,
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-neutral-50">
+    <main className="min-h-screen bg-bg-custom">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <div className="mb-12 text-center">
@@ -28,7 +29,7 @@ export default function PrivacyPage() {
           {/* Introduction */}
           <section>
             <p className="text-neutral-700 leading-relaxed mb-4">
-              At Lookenly, we respect your privacy and are committed to protecting your personal information.
+              At {siteConfig.site.name}, we respect your privacy and are committed to protecting your personal information.
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when
               you visit our website.
             </p>
@@ -140,7 +141,7 @@ export default function PrivacyPage() {
                 href="https://vercel.com/legal/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-600 hover:text-amber-700 underline"
+                className="text-accent hover:text-primary underline"
               >
                 Vercel Privacy Policy
               </a>
@@ -159,13 +160,13 @@ export default function PrivacyPage() {
                 href="https://www.hostinger.com/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-600 hover:text-amber-700 underline"
+                className="text-accent hover:text-primary underline"
               >
                 Hostinger Privacy Policy
               </a>
             </p>
 
-            <div className="opacity-60 border-l-4 border-amber-500 pl-6 mt-6">
+            <div className="opacity-60 border-l-4 border-accent pl-6 mt-6">
               <h3 className="font-montserrat text-lg font-semibold text-stone-800 mb-3">
                 Analytics Services (If Enabled)
               </h3>
@@ -180,7 +181,7 @@ export default function PrivacyPage() {
                     href="https://policies.google.com/privacy"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-amber-600 hover:text-amber-700 underline"
+                    className="text-accent hover:text-primary underline"
                   >
                     Google Privacy Policy
                   </a>
@@ -192,7 +193,7 @@ export default function PrivacyPage() {
                     href="https://policy.pinterest.com/en/privacy-policy"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-amber-600 hover:text-amber-700 underline"
+                    className="text-accent hover:text-primary underline"
                   >
                     Pinterest Privacy Policy
                   </a>
@@ -204,7 +205,7 @@ export default function PrivacyPage() {
                     href="https://www.facebook.com/privacy/policy"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-amber-600 hover:text-amber-700 underline"
+                    className="text-accent hover:text-primary underline"
                   >
                     Meta Privacy Policy
                   </a>
@@ -263,7 +264,7 @@ export default function PrivacyPage() {
             </ul>
             <p className="text-neutral-700 leading-relaxed mb-4">
               To exercise these rights, please contact us at:{' '}
-              <a href="mailto:hey@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
+              <a href="mailto:hey@lookenly.com" className="text-accent hover:text-primary underline">
                 hey@lookenly.com
               </a>
             </p>
@@ -338,7 +339,7 @@ export default function PrivacyPage() {
               </p>
               <p>
                 <strong>Email:</strong>{' '}
-                <a href="mailto:hey@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
+                <a href="mailto:hey@lookenly.com" className="text-accent hover:text-primary underline">
                   hey@lookenly.com
                 </a>
               </p>

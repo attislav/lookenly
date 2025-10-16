@@ -86,15 +86,15 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
   }
 
   return (
-    <nav className="bg-neutral-50 border border-neutral-200 rounded-none mb-12">
+    <nav className="bg-bg-custom border border-secondary rounded-none mb-12">
       {/* Header - Always Visible */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full px-5 py-4 flex items-center justify-between hover:bg-neutral-100 transition-colors"
+        className="w-full px-5 py-4 flex items-center justify-between hover:bg-secondary transition-colors"
       >
         <div className="flex items-center gap-3">
           <svg
-            className="w-5 h-5 text-amber-900"
+            className="w-5 h-5 text-primary"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -106,7 +106,7 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
               d="M4 6h16M4 12h16M4 18h7"
             />
           </svg>
-          <span className="font-montserrat text-sm font-semibold text-neutral-900 tracking-wide uppercase">
+          <span className="font-montserrat text-sm font-semibold text-text-primary tracking-wide uppercase">
             {tocItems.length} {tocItems.length === 1 ? 'Section' : 'Sections'}
           </span>
         </div>
@@ -140,16 +140,16 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
                   onClick={() => scrollToHeading(item.id)}
                   className={`text-left w-full font-montserrat text-xs transition-all duration-200 flex items-start gap-2 py-1 group ${
                     activeId === item.id
-                      ? 'text-amber-900 font-semibold'
-                      : 'text-neutral-600 hover:text-amber-900'
+                      ? 'text-primary font-semibold'
+                      : 'text-neutral-600 hover:text-primary'
                   }`}
                 >
                   {/* Numbered Indicator */}
                   <span
                     className={`mt-0.5 flex-shrink-0 font-semibold transition-all duration-200 ${
                       activeId === item.id
-                        ? 'text-amber-900'
-                        : 'text-neutral-400 group-hover:text-amber-900'
+                        ? 'text-primary'
+                        : 'text-neutral-400 group-hover:text-primary'
                     }`}
                   >
                     {index + 1}.

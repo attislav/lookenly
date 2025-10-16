@@ -29,7 +29,7 @@ export default function SearchBar() {
       {/* Search Icon Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 hover:text-amber-900 transition-colors"
+        className="p-2 hover:text-primary transition-colors"
         aria-label="Search"
       >
         <svg
@@ -52,7 +52,7 @@ export default function SearchBar() {
         <>
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/50 z-40"
+            className="fixed inset-0 bg-primary/50 z-40"
             onClick={() => setIsOpen(false)}
           />
 
@@ -66,11 +66,11 @@ export default function SearchBar() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Suche nach Artikeln, Themen..."
-                  className="w-full px-6 py-4 pr-20 border-2 border-neutral-200 focus:border-amber-900 focus:outline-none font-montserrat text-lg"
+                  className="w-full px-6 py-4 pr-20 border-2 border-secondary focus:border-primary focus:outline-none font-montserrat text-lg"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-amber-900 hover:bg-black text-white px-6 py-2 font-montserrat text-sm tracking-wide uppercase transition-colors"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-primary hover:bg-primary text-white px-6 py-2 font-montserrat text-sm tracking-wide uppercase transition-colors"
                 >
                   Suchen
                 </button>
@@ -79,7 +79,7 @@ export default function SearchBar() {
               {/* Close Button */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-4 right-4 text-neutral-400 hover:text-neutral-900 transition-colors"
+                className="absolute top-4 right-4 text-neutral-400 hover:text-text-primary transition-colors"
                 aria-label="Close search"
               >
                 <svg

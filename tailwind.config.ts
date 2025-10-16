@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { siteConfig } from './config/site.config'
 
 const config: Config = {
   content: [
@@ -8,6 +9,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        // Dynamische Farben aus siteConfig
+        primary: siteConfig.brand.colors.primary,
+        secondary: siteConfig.brand.colors.secondary,
+        accent: siteConfig.brand.colors.accent,
+        'bg-custom': siteConfig.brand.colors.background,
+        'text-primary': siteConfig.brand.colors.text,
+      },
       fontFamily: {
         playfair: ['var(--font-playfair)', 'serif'],
         montserrat: ['var(--font-montserrat)', 'sans-serif'],

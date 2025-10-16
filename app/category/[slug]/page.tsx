@@ -70,14 +70,14 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   if (posts.length === 0) {
     // Kategorie existiert, aber keine Posts
     return (
-      <div className="min-h-screen bg-neutral-50">
+      <div className="min-h-screen bg-bg-custom">
         {/* Hero Section */}
-        <section className="bg-black text-white py-32">
+        <section className="bg-primary text-white py-32">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-6">
               {categoryName}
             </h1>
-            <div className="w-16 h-px bg-amber-200 mx-auto mb-8"></div>
+            <div className="w-16 h-px bg-accent mx-auto mb-8"></div>
             <p className="font-montserrat text-lg tracking-widest uppercase text-neutral-300">
               {description}
             </p>
@@ -95,7 +95,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             </p>
             <Link
               href="/"
-              className="inline-block border border-neutral-900 text-neutral-900 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-neutral-900 hover:text-white transition-all duration-300"
+              className="inline-block border border-primary text-text-primary px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
             >
               Back to Home
             </Link>
@@ -106,14 +106,14 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-bg-custom">
       {/* Hero Section */}
-      <section className="bg-black text-white py-32">
+      <section className="bg-primary text-white py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-6">
             {categoryName}
           </h1>
-          <div className="w-16 h-px bg-amber-200 mx-auto mb-8"></div>
+          <div className="w-16 h-px bg-accent mx-auto mb-8"></div>
           <p className="font-montserrat text-lg tracking-widest uppercase text-neutral-300">
             {description}
           </p>
@@ -137,7 +137,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 className="group"
               >
                 {post.featuredImage && (
-                  <div className="aspect-[3/2] relative overflow-hidden bg-neutral-100 mb-6">
+                  <div className="aspect-[3/2] relative overflow-hidden bg-secondary mb-6">
                     <PinterestImage
                       src={post.featuredImage.node.sourceUrl}
                       alt={post.featuredImage.node.altText || post.title}
@@ -150,11 +150,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   </div>
                 )}
                 <div>
-                  <span className="inline-block font-montserrat text-xs tracking-widest uppercase text-amber-900 mb-3">
+                  <span className="inline-block font-montserrat text-xs tracking-widest uppercase text-primary mb-3">
                     {categoryName}
                   </span>
                   <h2
-                    className="font-playfair text-2xl font-bold mb-3 text-neutral-900 group-hover:text-amber-900 transition-colors line-clamp-2"
+                    className="font-playfair text-2xl font-bold mb-3 text-text-primary group-hover:text-primary transition-colors line-clamp-2"
                     dangerouslySetInnerHTML={{ __html: post.title }}
                   />
                   <div
@@ -176,11 +176,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </section>
 
       {/* Back to Home */}
-      <section className="py-16 bg-neutral-50">
+      <section className="py-16 bg-bg-custom">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <Link
             href="/"
-            className="inline-block border border-neutral-900 text-neutral-900 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-neutral-900 hover:text-white transition-all duration-300"
+            className="inline-block border border-primary text-text-primary px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
           >
             Explore All Stories
           </Link>

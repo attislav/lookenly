@@ -49,7 +49,7 @@ export default function PinterestImage({
           sizes={sizes}
           quality={quality}
           loading={priority ? 'eager' : 'lazy'}
-          onLoadingComplete={() => setIsLoading(false)}
+          onLoad={() => setIsLoading(false)}
           onError={() => {
             setIsLoading(false);
             setHasError(true);

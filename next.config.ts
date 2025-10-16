@@ -21,6 +21,7 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048], // Responsive Breakpoints
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384], // Kleine Bilder (Icons, Thumbnails)
     minimumCacheTTL: 60 * 60 * 24 * 365, // 1 Jahr Cache für optimierte Bilder
+    qualities: [75, 85, 90, 95], // Unterstützte Qualitätsstufen für Next.js 16
   },
 };
 

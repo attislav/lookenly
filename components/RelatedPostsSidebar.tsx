@@ -16,10 +16,10 @@ export default function RelatedPostsSidebar({ posts, categoryName }: RelatedPost
     <aside className="lg:sticky lg:top-24 lg:self-start">
       {/* Header */}
       <div className="mb-8">
-        <h3 className="font-playfair text-2xl font-bold text-neutral-900 mb-2">
+        <h3 className="font-playfair text-2xl font-bold text-text-primary mb-2">
           More in {categoryName}
         </h3>
-        <div className="w-12 h-px bg-amber-900"></div>
+        <div className="w-12 h-px bg-primary"></div>
       </div>
 
       {/* Related Posts List - Horizontal Layout */}
@@ -32,7 +32,7 @@ export default function RelatedPostsSidebar({ posts, categoryName }: RelatedPost
           >
             {/* Small Thumbnail on the Left */}
             {post.featuredImage && (
-              <div className="w-20 h-20 flex-shrink-0 relative overflow-hidden bg-neutral-100">
+              <div className="w-20 h-20 flex-shrink-0 relative overflow-hidden bg-secondary">
                 <PinterestImage
                   src={post.featuredImage.node.sourceUrl}
                   alt={post.featuredImage.node.altText || post.title}
@@ -46,7 +46,7 @@ export default function RelatedPostsSidebar({ posts, categoryName }: RelatedPost
             {/* Title on the Right */}
             <div className="flex-1 min-w-0">
               <h4
-                className="font-playfair text-sm font-bold text-neutral-900 group-hover:text-amber-900 transition-colors line-clamp-3 leading-tight"
+                className="font-playfair text-sm font-bold text-text-primary group-hover:text-primary transition-colors line-clamp-3 leading-tight"
                 dangerouslySetInnerHTML={{ __html: post.title }}
               />
             </div>
@@ -55,10 +55,10 @@ export default function RelatedPostsSidebar({ posts, categoryName }: RelatedPost
       </div>
 
       {/* View All Link */}
-      <div className="mt-10 pt-8 border-t border-neutral-200">
+      <div className="mt-10 pt-8 border-t border-secondary">
         <Link
           href={`/category/${categoryName.toLowerCase()}`}
-          className="inline-flex items-center gap-2 font-montserrat text-sm tracking-widest uppercase text-neutral-900 hover:text-amber-900 transition-colors group"
+          className="inline-flex items-center gap-2 font-montserrat text-sm tracking-widest uppercase text-text-primary hover:text-primary transition-colors group"
         >
           View All {categoryName}
           <svg

@@ -62,16 +62,16 @@ export default function RootLayout({
         {/* Pinterest Domain Verification - Optional */}
         <meta name="pinterest-rich-pin" content="true" />
       </head>
-      <body className={`${playfair.variable} ${montserrat.variable} font-sans antialiased bg-neutral-50`}>
+      <body className={`${playfair.variable} ${montserrat.variable} font-sans antialiased bg-bg-custom`}>
         <Analytics />
         <Navigation />
         {children}
         <ScrollToTop />
-        <footer className="bg-black text-neutral-300 py-16 border-t border-neutral-800">
+        <footer className="bg-primary text-neutral-300 py-16 border-t border-primary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
               <div>
-                <h3 className="font-playfair text-2xl font-bold mb-4 text-amber-100 tracking-wider">
+                <h3 className="font-playfair text-2xl font-bold mb-4 text-accent tracking-wider">
                   {siteConfig.site.name}
                 </h3>
                 <p className="text-neutral-400 text-sm leading-relaxed">
@@ -88,7 +88,7 @@ export default function RootLayout({
                       <li key={link.href}>
                         <a
                           href={link.href}
-                          className="text-neutral-400 hover:text-amber-200 transition-colors duration-200"
+                          className="text-neutral-400 hover:text-accent transition-colors duration-200"
                           {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
                         >
                           {link.label}
@@ -99,7 +99,7 @@ export default function RootLayout({
                 </div>
               ))}
             </div>
-            <div className="border-t border-neutral-800 pt-8">
+            <div className="border-t border-primary pt-8">
               <p className="text-neutral-500 text-xs tracking-wider text-center">
                 &copy; {new Date().getFullYear()} {siteConfig.site.name}. All rights reserved.
               </p>

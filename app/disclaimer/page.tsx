@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function DisclaimerPage() {
   return (
-    <main className="min-h-screen bg-neutral-50">
+    <main className="min-h-screen bg-bg-custom">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <div className="mb-12 text-center">
@@ -145,7 +145,7 @@ export default function DisclaimerPage() {
             </p>
             <p className="text-neutral-700 leading-relaxed mb-4">
               If you believe any content on our site infringes your copyright, please contact us at:{' '}
-              <a href="mailto:hey@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
+              <a href="mailto:hey@lookenly.com" className="text-accent hover:text-primary underline">
                 hey@lookenly.com
               </a>
             </p>
@@ -239,7 +239,7 @@ export default function DisclaimerPage() {
               </p>
               <p>
                 <strong>Email:</strong>{' '}
-                <a href="mailto:hey@lookenly.com" className="text-amber-600 hover:text-amber-700 underline">
+                <a href="mailto:hey@lookenly.com" className="text-accent hover:text-primary underline">
                   hey@lookenly.com
                 </a>
               </p>

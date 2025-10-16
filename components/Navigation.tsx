@@ -11,12 +11,12 @@ export default function Navigation() {
   const menuItems = siteConfig.navigation.header;
 
   return (
-    <nav className="bg-white/95 backdrop-blur-sm border-b border-neutral-200 sticky top-0 z-50">
+    <nav className="bg-white/95 backdrop-blur-sm border-b border-secondary sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="font-playfair text-2xl font-bold text-black tracking-wider hover:text-amber-900 transition-colors duration-300">
+            <span className="font-playfair text-2xl font-bold text-text-primary tracking-wider hover:text-primary transition-colors duration-300">
               {siteConfig.brand.logo?.text || siteConfig.site.name}
             </span>
           </Link>
@@ -27,11 +27,11 @@ export default function Navigation() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="font-montserrat text-sm tracking-widest uppercase text-neutral-700 hover:text-amber-900 transition-colors duration-300 relative group"
+                className="font-montserrat text-sm tracking-widest uppercase text-neutral-700 hover:text-primary transition-colors duration-300 relative group"
                 {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-px bg-amber-900 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
             {/* Search Bar */}
@@ -43,7 +43,7 @@ export default function Navigation() {
             <SearchBar />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-neutral-700 hover:text-amber-900"
+              className="p-2 text-neutral-700 hover:text-primary"
             >
               <svg
                 className="h-6 w-6"
@@ -66,12 +66,12 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-6 pt-2 border-t border-neutral-200">
+          <div className="md:hidden pb-6 pt-2 border-t border-secondary">
             {menuItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="block py-3 px-4 font-montserrat text-sm tracking-widest uppercase text-neutral-700 hover:text-amber-900 hover:bg-neutral-50 transition-colors duration-200"
+                className="block py-3 px-4 font-montserrat text-sm tracking-widest uppercase text-neutral-700 hover:text-primary hover:bg-secondary transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
                 {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
               >

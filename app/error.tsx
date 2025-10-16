@@ -16,7 +16,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-neutral-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-bg-custom flex items-center justify-center px-4">
       <div className="max-w-2xl mx-auto text-center">
         {/* Error Icon */}
         <div className="mb-8">
@@ -36,10 +36,10 @@ export default function Error({
         </div>
 
         {/* Decorative Line */}
-        <div className="w-24 h-px bg-amber-900 mx-auto mb-8"></div>
+        <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
 
         {/* Message */}
-        <h1 className="font-playfair text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
+        <h1 className="font-playfair text-4xl md:text-5xl font-bold text-text-primary mb-6">
           Something Went Wrong
         </h1>
 
@@ -50,7 +50,7 @@ export default function Error({
 
         {/* Error Details (nur in Development) */}
         {process.env.NODE_ENV === 'development' && (
-          <div className="mt-8 p-4 bg-neutral-100 rounded text-left max-w-lg mx-auto">
+          <div className="mt-8 p-4 bg-secondary rounded text-left max-w-lg mx-auto">
             <p className="font-mono text-xs text-neutral-700 break-all">
               {error.message}
             </p>
@@ -61,27 +61,27 @@ export default function Error({
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
           <button
             onClick={reset}
-            className="inline-block bg-black text-white px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-amber-900 transition-all duration-300"
+            className="inline-block bg-primary text-white px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary transition-all duration-300"
           >
             Try Again
           </button>
 
           <Link
             href="/"
-            className="inline-block border border-neutral-900 text-neutral-900 px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-neutral-900 hover:text-white transition-all duration-300"
+            className="inline-block border border-primary text-text-primary px-10 py-4 font-montserrat text-sm tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
           >
             Back to Home
           </Link>
         </div>
 
         {/* Help Section */}
-        <div className="mt-16 pt-12 border-t border-neutral-200">
+        <div className="mt-16 pt-12 border-t border-secondary">
           <p className="font-montserrat text-xs tracking-widest uppercase text-neutral-500 mb-4">
             Need Help?
           </p>
           <p className="font-montserrat text-sm text-neutral-600">
             If this problem persists,{' '}
-            <Link href="/about" className="text-amber-900 hover:underline">
+            <Link href="/about" className="text-primary hover:underline">
               contact us
             </Link>
           </p>
