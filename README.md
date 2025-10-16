@@ -35,5 +35,5 @@ Eine moderne, bildlastige Fashion, Beauty & Lifestyle Website mit Headless WordP
 ## Deployment
 
 Auf Vercel deployen - einfach GitHub Repo verbinden!
-
+s
 Mehr Infos in der ausführlichen Dokumentation im Projekt.
