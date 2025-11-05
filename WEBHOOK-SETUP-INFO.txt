@@ -1,0 +1,70 @@
+===============================================
+LOOKENLY - WEBHOOK SETUP INFORMATIONEN
+===============================================
+
+REVALIDATION TOKEN:
+8qdckYqS08klwujak7MzD6j3wYKIXMUirTVeGaUHyZ4=
+
+===============================================
+VERCEL ENVIRONMENT VARIABLE
+===============================================
+
+Name: REVALIDATION_TOKEN
+Value: 8qdckYqS08klwujak7MzD6j3wYKIXMUirTVeGaUHyZ4=
+Environment: Production, Preview, Development (alle auswählen)
+
+Wichtig: Nach dem Setzen -> Redeploy!
+
+===============================================
+FTP ZUGANGSDATEN
+===============================================
+
+Host: 31.170.166.216
+Username: u865257792.wp.lookenly.com
+Password: j$F5QV8cCTW]Dn@s
+Port: 21
+
+===============================================
+DATEI-PFADE
+===============================================
+
+Lokale PHP-Datei:
+C:\Users\Atti\projekte\wordpress+nextjs\generated-sites\lookenly\nextjs-revalidation.php
+
+Upload auf Server zu:
+/public_html/wp-content/mu-plugins/nextjs-revalidation.php
+
+Falls mu-plugins Ordner nicht existiert -> erstellen!
+
+===============================================
+TEST-URL (NACH VERCEL DEPLOY)
+===============================================
+
+https://lookenly.com/api/revalidate?token=8qdckYqS08klwujak7MzD6j3wYKIXMUirTVeGaUHyZ4=
+
+Erwartete Antwort:
+{
+  "success": true,
+  "message": "Test revalidation successful - homepage revalidated"
+}
+
+===============================================
+SCHRITT-FÜR-SCHRITT
+===============================================
+
+1. VERCEL:
+   - Dashboard -> lookenly -> Settings -> Environment Variables
+   - Add: REVALIDATION_TOKEN = 8qdckYqS08klwujak7MzD6j3wYKIXMUirTVeGaUHyZ4=
+   - Deployments -> Redeploy
+
+2. FTP:
+   - FileZilla öffnen
+   - Verbinden mit obigen Zugangsdaten
+   - Navigiere zu: /public_html/wp-content/mu-plugins/
+   - Upload: nextjs-revalidation.php
+
+3. TESTEN:
+   - Browser: Test-URL öffnen (siehe oben)
+   - WordPress: Post ändern -> Update -> Auf lookenly.com prüfen
+
+===============================================

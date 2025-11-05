@@ -13,63 +13,8 @@ export default async function Home() {
   const posts = await getPosts();
   const categories = await getCategories();
 
-  // Mock Posts für Demo (falls WordPress nicht verbunden)
-  const mockPosts: Post[] = [
-    {
-      id: 'mock-1',
-      title: 'The Art of Timeless Elegance',
-      slug: 'timeless-elegance',
-      excerpt: '<p>Discover how to curate a wardrobe that transcends seasons and trends, focusing on quality pieces that tell a story of refined taste.</p>',
-      date: new Date().toISOString(),
-      featuredImage: {
-        node: {
-          sourceUrl: '/images/post-1.jpg',
-          altText: 'Timeless Elegance',
-          mediaDetails: { width: 800, height: 1200 }
-        }
-      },
-      categories: {
-        nodes: [{ name: 'Fashion', slug: 'fashion' }]
-      }
-    },
-    {
-      id: 'mock-2',
-      title: 'Sophisticated Beauty Rituals',
-      slug: 'beauty-rituals',
-      excerpt: '<p>Explore the refined approach to beauty that emphasizes natural radiance and timeless techniques over fleeting trends.</p>',
-      date: new Date().toISOString(),
-      featuredImage: {
-        node: {
-          sourceUrl: '/images/post-2.jpg',
-          altText: 'Beauty Rituals',
-          mediaDetails: { width: 800, height: 1200 }
-        }
-      },
-      categories: {
-        nodes: [{ name: 'Beauty', slug: 'beauty' }]
-      }
-    },
-    {
-      id: 'mock-3',
-      title: 'Curating a Life of Grace',
-      slug: 'life-of-grace',
-      excerpt: '<p>The art of living well extends beyond aesthetics—it\'s about creating moments of beauty in everyday life.</p>',
-      date: new Date().toISOString(),
-      featuredImage: {
-        node: {
-          sourceUrl: '/images/post-3.jpg',
-          altText: 'Life of Grace',
-          mediaDetails: { width: 800, height: 1200 }
-        }
-      },
-      categories: {
-        nodes: [{ name: 'Lifestyle', slug: 'lifestyle' }]
-      }
-    }
-  ];
-
-  // Top 6 Posts für die Startseite (WordPress oder Mock)
-  const featuredPosts = posts.length > 0 ? posts.slice(0, 6) : mockPosts;
+  // Top 6 Posts für die Startseite (WordPress only - no mock data)
+  const featuredPosts = posts.slice(0, 6);
 
   return (
     <div className="min-h-screen bg-bg-custom">
@@ -102,64 +47,52 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Editorial Quote Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <p className="font-playfair text-3xl md:text-4xl italic text-gray-900 leading-relaxed">
-            "Fashion is the armor to survive the reality of everyday life"
-          </p>
-          <div className="mt-6 text-neutral-500 font-montserrat text-sm tracking-widest uppercase">
-            Bill Cunningham
-          </div>
-        </div>
-      </section>
+      {/* Kategorien Section - Dynamisch aus WordPress */}
+      {categories.length > 0 && (
+        <section className="py-24 bg-bg-custom">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-playfair text-5xl md:text-6xl font-bold text-center mb-4 text-text-primary">
+              Collections
+            </h2>
+            <div className="w-16 h-px bg-primary mx-auto mb-20"></div>
 
-      {/* Kategorien Section - Minimalistisch */}
-      <section className="py-24 bg-bg-custom">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-playfair text-5xl md:text-6xl font-bold text-center mb-4 text-gray-900">
-            Collections
-          </h2>
-          <div className="w-16 h-px bg-primary mx-auto mb-20"></div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: 'Fashion', desc: 'Timeless Elegance', image: '/images/fashion-category.jpg' },
-              { name: 'Beauty', desc: 'Refined Grace', image: '/images/beauty-category.jpg' },
-              { name: 'Lifestyle', desc: 'Curated Living', image: '/images/lifestyle-category.jpg' }
-            ].map((cat) => (
-              <Link
-                key={cat.name}
-                href={`/category/${cat.name.toLowerCase()}`}
-                className="group relative bg-white border border-secondary overflow-hidden hover:border-primary transition-all duration-500"
-              >
-                <div className="aspect-[3/4] bg-secondary relative overflow-hidden">
-                  <Image
-                    src={cat.image}
-                    alt={cat.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
-                </div>
-                <div className="p-8 text-center">
-                  <h3 className="font-playfair text-3xl font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors">
-                    {cat.name}
-                  </h3>
-                  <p className="font-montserrat text-xs tracking-widest uppercase text-neutral-500">
-                    {cat.desc}
-                  </p>
-                </div>
-              </Link>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {categories.slice(0, 3).map((cat: Category, index: number) => (
+                <Link
+                  key={cat.slug}
+                  href={`/category/${cat.slug}`}
+                  className="group relative bg-white border border-secondary overflow-hidden hover:border-primary transition-all duration-500"
+                >
+                  <div className="aspect-[3/4] bg-secondary relative overflow-hidden">
+                    {/* Category images: category-1.jpg, category-2.jpg, category-3.jpg */}
+                    <Image
+                      src={`/images/category-${index + 1}.jpg`}
+                      alt={cat.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
+                  </div>
+                  <div className="p-8 text-center">
+                    <h3 className="font-playfair text-3xl font-bold mb-2 text-text-primary group-hover:text-primary transition-colors">
+                      {cat.name}
+                    </h3>
+                    <p className="font-montserrat text-xs tracking-widest uppercase text-neutral-500">
+                      {cat.count} {cat.count === 1 ? 'Post' : 'Posts'}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Featured Posts Section - Editorial Style */}
       <section id="featured" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-playfair text-5xl md:text-6xl font-bold text-center mb-4 text-gray-900">
+          <h2 className="font-playfair text-5xl md:text-6xl font-bold text-center mb-4 text-text-primary">
             Latest Stories
           </h2>
           <div className="w-16 h-px bg-primary mx-auto mb-20"></div>
@@ -185,12 +118,12 @@ export default async function Home() {
                   )}
                   <div>
                     {post.categories.nodes.length > 0 && (
-                      <span className="inline-block font-montserrat text-xs tracking-widest uppercase text-amber-700 font-bold mb-3">
+                      <span className="inline-block font-montserrat text-xs tracking-widest uppercase text-primary mb-3">
                         {post.categories.nodes[0].name}
                       </span>
                     )}
                     <h3
-                      className="font-playfair text-2xl font-bold mb-3 text-gray-900 group-hover:text-primary transition-colors line-clamp-2"
+                      className="font-playfair text-2xl font-bold mb-3 text-text-primary group-hover:text-primary transition-colors line-clamp-2"
                       dangerouslySetInnerHTML={{ __html: post.title }}
                     />
                     <div
@@ -237,11 +170,11 @@ export default async function Home() {
       {/* Newsletter Section - Minimalistisch */}
       <section className="py-24 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-text-primary">
             Stay Inspired
           </h2>
           <p className="font-montserrat text-sm text-neutral-600 mb-10 tracking-wide">
-            Subscribe to receive curated insights on fashion, beauty, and lifestyle.
+            Subscribe to receive our latest stories and updates.
           </p>
           <form className="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
             <input

@@ -1,14 +1,41 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import SearchBar from './SearchBar';
 import { siteConfig } from '@/config/site.config';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = siteConfig.navigation.header;
+  // Build menu items: combine header links with WordPress categories
+  const menuItems = useMemo(() => {
+    const items = [];
+
+    // Add Home link first (if exists)
+    const homeLink = siteConfig.navigation.header.find(item => item.href === '/');
+    if (homeLink) {
+      items.push(homeLink);
+    }
+
+    // Add WordPress categories from menuCategories (if any)
+    if (siteConfig.navigation.menuCategories && siteConfig.navigation.menuCategories.length > 0) {
+      const categoryLinks = siteConfig.navigation.menuCategories.map(cat => ({
+        label: cat.name,
+        href: `/category/${cat.slug}`,
+        external: false
+      }));
+      items.push(...categoryLinks);
+    }
+
+    // Add other header links (excluding Home and category links)
+    const otherLinks = siteConfig.navigation.header.filter(
+      item => item.href !== '/' && !item.href.startsWith('/category/')
+    );
+    items.push(...otherLinks);
+
+    return items;
+  }, []);
 
   return (
     <nav className="bg-white/95 backdrop-blur-sm border-b border-secondary sticky top-0 z-50">

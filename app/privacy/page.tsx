@@ -264,8 +264,8 @@ export default function PrivacyPage() {
             </ul>
             <p className="text-neutral-700 leading-relaxed mb-4">
               To exercise these rights, please contact us at:{' '}
-              <a href="mailto:hey@lookenly.com" className="text-accent hover:text-primary underline">
-                hey@lookenly.com
+              <a href={`mailto:${siteConfig.legal.contactEmail}`} className="text-accent hover:text-primary underline">
+                {siteConfig.legal.contactEmail}
               </a>
             </p>
 
@@ -335,15 +335,15 @@ export default function PrivacyPage() {
             </p>
             <div className="text-neutral-700 space-y-2 pl-4">
               <p>
-                <strong>Company:</strong> Triple A Digital
+                <strong>Company:</strong> {siteConfig.legal.companyName}
               </p>
               <p>
                 <strong>Email:</strong>{' '}
-                <a href="mailto:hey@lookenly.com" className="text-accent hover:text-primary underline">
-                  hey@lookenly.com
+                <a href={`mailto:${siteConfig.legal.contactEmail}`} className="text-accent hover:text-primary underline">
+                  {siteConfig.legal.contactEmail}
                 </a>
               </p>
-              <p><strong>Website:</strong> lookenly.com</p>
+              <p><strong>Website:</strong> {siteConfig.site.url.replace('https://', '').replace('http://', '')}</p>
             </div>
           </section>
         </div>

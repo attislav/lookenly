@@ -36,7 +36,7 @@ export default function About() {
           <div className="space-y-12">
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="font-playfair text-4xl font-bold mb-6 text-gray-900">
-                Hi, I'm Sophia Laurent
+                Hi, I'm Gisella,
               </h2>
               <p className="font-montserrat text-base text-neutral-600 leading-relaxed mb-6">
                 Welcome to {siteConfig.site.name}—a space I created for those who believe that style
@@ -234,19 +234,12 @@ export default function About() {
           </p>
           <div className="flex gap-8 justify-center">
             <a
-              href="#"
+              href="https://pinterest.com/lookenlyFashion/"
               className="font-montserrat text-sm tracking-widest uppercase text-neutral-400 hover:text-accent transition-colors"
             >
               Pinterest
             </a>
-            <span className="text-neutral-700">|</span>
-            <a
-              href="#"
-              className="font-montserrat text-sm tracking-widest uppercase text-neutral-400 hover:text-accent transition-colors"
-            >
-              Instagram
-            </a>
-          </div>
+           </div>
         </div>
       </section>
 

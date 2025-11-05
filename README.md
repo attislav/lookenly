@@ -1,45 +1,42 @@
-# Fashion Blog - Headless WordPress + Next.js
+# Lookenly
 
-Eine moderne, bildlastige Fashion, Beauty & Lifestyle Website mit Headless WordPress als CMS und Next.js als Frontend.
+Discover the latest trends in fashion, beauty tips, and lifestyle inspiration.
 
-## Repository
+## 🚀 Generated Site
 
-**GitHub:** https://github.com/attislav/lookenly.git
+This Next.js site was generated using the Multi-Site Generator.
 
-Das Lookenly-Projekt ist ein eleganter Fashion, Beauty & Lifestyle Blog mit Pinterest-Optimierung.
+- **Niche:** Fashion
+- **Created:** 5.11.2025
+- **WordPress:** https://wp.lookenly.com
 
-## Quick Start
+## 📦 Development
 
-1. **WordPress URL eintragen** in `.env.local`:
-   ```
-   NEXT_PUBLIC_WORDPRESS_API_URL=https://deine-wordpress-seite.de/graphql
-   ```
+```bash
+# Install dependencies
+npm install
 
-2. **Server starten**:
-   ```bash
-   npm run dev
-   ```
+# Run development server
+npm run dev
 
-3. **Öffne** http://localhost:3002
+# Build for production
+npm run build
 
-## Features
+# Start production server
+npm start
+```
 
-- Headless WordPress CMS
-- Next.js 15 mit TypeScript
-- Tailwind CSS
-- Pinterest-optimiert
-- WPGraphQL Integration
-- Responsive Design
+## 🌐 Live Site
 
-## WordPress Setup
+- **URL:** https://lookenly.com
+- **Status:** success
 
-1. WPGraphQL Plugin installieren
-2. CORS aktivieren (siehe Anleitung unten)
-3. Kategorien erstellen: Fashion, Beauty, Lifestyle
-4. Content mit Featured Images erstellen
+## 📝 Configuration
 
-## Deployment
+Site configuration is managed in:
+- `config/site.config.ts` - Main configuration
+- `.env.local` - Environment variables
 
-Auf Vercel deployen - einfach GitHub Repo verbinden!
+---
 
-Mehr Infos in der ausführlichen Dokumentation im Projekt.
+*Generated with Site Generator*
