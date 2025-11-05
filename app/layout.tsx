@@ -77,8 +77,18 @@ export default function RootLayout({
             }
           `
         }} />
+
+        {/* Custom Head Scripts */}
+        {siteConfig.customScripts?.headScripts && (
+          <div dangerouslySetInnerHTML={{ __html: siteConfig.customScripts.headScripts }} />
+        )}
       </head>
       <body className={`${playfair.variable} ${montserrat.variable} font-sans antialiased bg-bg-custom`}>
+        {/* Custom Body Start Scripts */}
+        {siteConfig.customScripts?.bodyStartScripts && (
+          <div dangerouslySetInnerHTML={{ __html: siteConfig.customScripts.bodyStartScripts }} />
+        )}
+
         <Analytics />
         <Navigation />
         {children}
@@ -190,6 +200,11 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+
+        {/* Custom Body End Scripts */}
+        {siteConfig.customScripts?.bodyEndScripts && (
+          <div dangerouslySetInnerHTML={{ __html: siteConfig.customScripts.bodyEndScripts }} />
+        )}
       </body>
     </html>
   );
