@@ -278,7 +278,7 @@ export const siteConfig: SiteConfig = {
   },
 
   customScripts: {
-    // headScripts: "",
+    headScripts: '<script defer data-domain="lookenly.com" src="https://stats.tripleadigital.de/js/script.js"></script>',
     // bodyStartScripts: "",
     // bodyEndScripts: "",
     // Note: [year] replacement is done server-side in lib/wordpress.ts
