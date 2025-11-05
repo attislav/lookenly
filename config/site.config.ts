@@ -171,7 +171,8 @@ export const siteConfig: SiteConfig = {
       "secondary": "#f5f5f4",
       "accent": "#f59e0b",
       "background": "#fafaf9",
-      "text": "#171717"
+      "text": "#171717",
+      "textSecondary": "#e5e5e5"
 },
     typography: {
       "headingFont": "Playfair Display",

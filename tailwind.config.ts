@@ -16,6 +16,7 @@ const config: Config = {
         accent: siteConfig.brand.colors.accent,          // #f59e0b - Gold
         'bg-custom': siteConfig.brand.colors.background, // #fafaf9 - Light beige
         'text-dark': siteConfig.brand.colors.text,       // #171717 - Dark text
+        'text-secondary': siteConfig.brand.colors.textSecondary, // #e5e5e5 - Light gray (for footer on dark bg)
       },
       fontFamily: {
         playfair: ['var(--font-playfair)', 'serif'],
