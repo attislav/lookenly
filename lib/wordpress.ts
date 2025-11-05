@@ -8,6 +8,13 @@ export const graphQLClient = new GraphQLClient(endpoint, {
   },
 });
 
+// Helper: Replace [year] with current year in content
+function replaceYearPlaceholder(text: string): string {
+  if (!text) return text;
+  const currentYear = new Date().getFullYear().toString();
+  return text.replace(/\[year\]/gi, currentYear);
+}
+
 // Funktion zum Abrufen aller Posts
 export async function getPosts() {
   const query = `
@@ -42,7 +49,14 @@ export async function getPosts() {
 
   try {
     const data: any = await graphQLClient.request(query);
-    return data.posts.nodes;
+    const posts = data.posts.nodes;
+
+    // Replace [year] in all posts
+    return posts.map((post: any) => ({
+      ...post,
+      title: replaceYearPlaceholder(post.title),
+      excerpt: replaceYearPlaceholder(post.excerpt),
+    }));
   } catch (error) {
     console.error('Error fetching posts:', error);
     return [];
@@ -116,7 +130,20 @@ export async function getPostBySlug(slug: string) {
 
   try {
     const data: any = await graphQLClient.request(query, { slug });
-    return data.post;
+    const post = data.post;
+
+    // Replace [year] in content server-side
+    if (post && post.content) {
+      post.content = replaceYearPlaceholder(post.content);
+    }
+    if (post && post.title) {
+      post.title = replaceYearPlaceholder(post.title);
+    }
+    if (post && post.excerpt) {
+      post.excerpt = replaceYearPlaceholder(post.excerpt);
+    }
+
+    return post;
   } catch (error) {
     console.error('Error fetching post:', error);
     return null;
@@ -157,7 +184,14 @@ export async function getPostsByCategory(categorySlug: string) {
 
   try {
     const data: any = await graphQLClient.request(query, { categorySlug });
-    return data.posts.nodes;
+    const posts = data.posts.nodes;
+
+    // Replace [year] in all posts
+    return posts.map((post: any) => ({
+      ...post,
+      title: replaceYearPlaceholder(post.title),
+      excerpt: replaceYearPlaceholder(post.excerpt),
+    }));
   } catch (error) {
     console.error('Error fetching posts by category:', error);
     return [];
@@ -229,7 +263,14 @@ export async function getPostsByTag(tagSlug: string) {
 
   try {
     const data: any = await graphQLClient.request(query, { tagSlug });
-    return data.posts.nodes;
+    const posts = data.posts.nodes;
+
+    // Replace [year] in all posts
+    return posts.map((post: any) => ({
+      ...post,
+      title: replaceYearPlaceholder(post.title),
+      excerpt: replaceYearPlaceholder(post.excerpt),
+    }));
   } catch (error) {
     console.error('Error fetching posts by tag:', error);
     return [];
@@ -271,7 +312,14 @@ export async function getRelatedPosts(categorySlug: string, currentPostId: strin
   try {
     const data: any = await graphQLClient.request(query, { categorySlug, limit });
     // Filter out current post
-    return data.posts.nodes.filter((post: any) => post.id !== currentPostId);
+    const posts = data.posts.nodes.filter((post: any) => post.id !== currentPostId);
+
+    // Replace [year] in all posts
+    return posts.map((post: any) => ({
+      ...post,
+      title: replaceYearPlaceholder(post.title),
+      excerpt: replaceYearPlaceholder(post.excerpt),
+    }));
   } catch (error) {
     console.error('Error fetching related posts:', error);
     return [];
@@ -312,7 +360,14 @@ export async function searchPosts(searchQuery: string) {
 
   try {
     const data: any = await graphQLClient.request(query, { searchQuery });
-    return data.posts.nodes;
+    const posts = data.posts.nodes;
+
+    // Replace [year] in all posts
+    return posts.map((post: any) => ({
+      ...post,
+      title: replaceYearPlaceholder(post.title),
+      excerpt: replaceYearPlaceholder(post.excerpt),
+    }));
   } catch (error) {
     console.error('Error searching posts:', error);
     return [];

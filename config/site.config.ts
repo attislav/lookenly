@@ -280,31 +280,8 @@ export const siteConfig: SiteConfig = {
   customScripts: {
     // headScripts: "",
     // bodyStartScripts: "",
-    bodyEndScripts: `<script>
-  // Fast [year] replacement (runs after first paint)
-  (function() {
-    if (typeof window !== 'undefined') {
-      function replaceYear() {
-        const currentYear = new Date().getFullYear();
-        const walker = document.createTreeWalker(
-          document.body,
-          NodeFilter.SHOW_TEXT,
-          null
-        );
-        let node;
-        while (node = walker.nextNode()) {
-          if (node.textContent.match(/\\[year\\]/gi)) {
-            node.textContent = node.textContent.replace(/\\[year\\]/gi, currentYear);
-          }
-        }
-      }
-      // Run after first paint (fast!)
-      requestAnimationFrame(function() {
-        setTimeout(replaceYear, 0);
-      });
-    }
-  })();
-</script>`,
+    // bodyEndScripts: "",
+    // Note: [year] replacement is done server-side in lib/wordpress.ts
   },
 
   legal: {
