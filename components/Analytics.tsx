@@ -10,6 +10,7 @@ export default function Analytics() {
   const googleAdsenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
   const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
   const pinterestTag = process.env.NEXT_PUBLIC_PINTEREST_TAG;
+  const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
 
   return (
     <>
@@ -75,6 +76,16 @@ export default function Analytics() {
             pintrk('page');
           `}
         </Script>
+      )}
+
+      {/* Plausible Analytics (Self-Hosted at stats.tripleadigital.de) */}
+      {plausibleDomain && (
+        <Script
+          defer
+          data-domain={plausibleDomain}
+          src="https://stats.tripleadigital.de/js/script.js"
+          strategy="afterInteractive"
+        />
       )}
 
       {/* Add more tracking scripts here */}

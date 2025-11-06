@@ -87,6 +87,18 @@ NEXT_PUBLIC_META_PIXEL_ID=XXXXXXXXXXXXXXXX
 NEXT_PUBLIC_PINTEREST_TAG=XXXXXXXXXXXXX
 ```
 
+### ✅ Plausible Analytics (Self-Hosted)
+```bash
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN=lookenly.com
+```
+
+**Beispiel-Werte für verschiedene Sites:**
+- lookenly.com → `NEXT_PUBLIC_PLAUSIBLE_DOMAIN=lookenly.com`
+- trendsettertales.com → `NEXT_PUBLIC_PLAUSIBLE_DOMAIN=trendsettertales.com`
+- couturechronicles.com → `NEXT_PUBLIC_PLAUSIBLE_DOMAIN=couturechronicles.com`
+
+**Wichtig:** Der Plausible Server ist selbst-gehostet auf `stats.tripleadigital.de`. Das Script wird automatisch von dort geladen.
+
 ---
 
 ## 🛠️ Weitere Scripts hinzufügen
@@ -268,6 +280,9 @@ NEXT_PUBLIC_ADSENSE_ID=ca-pub-test
 ---
 
 ## 📝 Changelog
+
+### 2025-11-06
+- ✅ Plausible Analytics Support hinzugefügt (Self-Hosted)
 
 ### 2025-01-12
 - ✅ Analytics Component erstellt
