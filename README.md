@@ -7,7 +7,7 @@ Discover the latest trends in fashion, beauty tips, and lifestyle inspiration.
 This Next.js site was generated using the Multi-Site Generator.
 
 - **Niche:** Fashion
-- **Created:** 5.11.2025
+- **Created:** 6.11.2025
 - **WordPress:** https://wp.lookenly.com
 
 ## 📦 Development
