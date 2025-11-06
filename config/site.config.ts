@@ -278,7 +278,7 @@ export const siteConfig: SiteConfig = {
   },
 
   customScripts: {
-    headScripts: '<script defer data-domain="lookenly.com" src="https://stats.tripleadigital.de/js/script.js"></script>',
+    headScripts: '', // Plausible moved to Analytics.tsx (via NEXT_PUBLIC_PLAUSIBLE_DOMAIN)
     // bodyStartScripts: "",
     // bodyEndScripts: "",
     // Note: [year] replacement is done server-side in lib/wordpress.ts
