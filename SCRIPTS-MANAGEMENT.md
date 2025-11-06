@@ -88,16 +88,28 @@ NEXT_PUBLIC_PINTEREST_TAG=XXXXXXXXXXXXX
 ```
 
 ### ✅ Plausible Analytics (Self-Hosted)
+
+**Methode 1: Custom Scripts Tab im Generator UI (EMPFOHLEN)**
+```html
+<script defer data-domain="lookenly.com" src="https://stats.tripleadigital.de/js/script.js"></script>
+```
+- Im Generator UI → Custom Scripts Tab → `<head> Scripts` eingeben
+- Wird in `site.config.ts` → `customScripts.headScripts` gespeichert
+- Keine Environment Variables nötig
+
+**Methode 2: Environment Variable (Alternative)**
 ```bash
 NEXT_PUBLIC_PLAUSIBLE_DOMAIN=lookenly.com
 ```
+- Manuell in `Analytics.tsx` implementieren
+- Erfordert Environment Variable in Vercel Dashboard
 
 **Beispiel-Werte für verschiedene Sites:**
-- lookenly.com → `NEXT_PUBLIC_PLAUSIBLE_DOMAIN=lookenly.com`
-- trendsettertales.com → `NEXT_PUBLIC_PLAUSIBLE_DOMAIN=trendsettertales.com`
-- couturechronicles.com → `NEXT_PUBLIC_PLAUSIBLE_DOMAIN=couturechronicles.com`
+- lookenly.com → `data-domain="lookenly.com"`
+- trendsettertales.com → `data-domain="trendsettertales.com"`
+- couturechronicles.com → `data-domain="couturechronicles.com"`
 
-**Wichtig:** Der Plausible Server ist selbst-gehostet auf `stats.tripleadigital.de`. Das Script wird automatisch von dort geladen.
+**Wichtig:** Der Plausible Server ist selbst-gehostet auf `stats.tripleadigital.de`.
 
 ---
 
@@ -283,6 +295,8 @@ NEXT_PUBLIC_ADSENSE_ID=ca-pub-test
 
 ### 2025-11-06
 - ✅ Plausible Analytics Support hinzugefügt (Self-Hosted)
+- ✅ Custom Scripts Tab Methode als primäre Methode definiert (keine ENV Variables nötig)
+- ✅ Plausible aus Analytics.tsx entfernt (nutzt jetzt customScripts in site.config.ts)
 
 ### 2025-01-12
 - ✅ Analytics Component erstellt
