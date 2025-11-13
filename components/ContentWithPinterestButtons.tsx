@@ -16,6 +16,62 @@ export default function ContentWithPinterestButtons({
   className = '',
 }: ContentWithPinterestButtonsProps) {
   useEffect(() => {
+    // Handle old anchor format in URL (#Capitalized-Text) and convert to WordPress format (#toc-lowercase-text)
+    const handleAnchorRedirect = () => {
+      const hash = window.location.hash;
+      if (!hash || hash.startsWith('#toc-')) return; // Already correct format or no hash
+
+      // Convert old format to new: #Belted-Coat... → #toc-belted-coat...
+      const newHash = '#toc-' + hash.slice(1).toLowerCase();
+      const targetElement = document.getElementById(newHash.slice(1));
+
+      if (targetElement) {
+        // Smooth scroll to element
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Update URL without reload
+        window.history.replaceState(null, '', newHash);
+      }
+    };
+
+    // Run on initial load
+    handleAnchorRedirect();
+
+    // Add IDs to all headings for anchor link functionality
+    const addHeadingIds = () => {
+      const headings = document.querySelectorAll('.blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4, .blog-content h5, .blog-content h6');
+
+      headings.forEach((heading) => {
+        // Skip if ID already exists (WordPress may have already set it)
+        if (heading.id) {
+          // Just add scroll margin if ID exists
+          heading.style.scrollMarginTop = '100px';
+          return;
+        }
+
+        // Generate ID matching WordPress TOC format: toc-lowercase-with-dashes
+        const text = heading.textContent || '';
+        const slug = text
+          .toLowerCase()
+          .trim()
+          .replace(/[\u2018\u2019]/g, "'") // Replace smart quotes with regular quotes
+          .replace(/[\u201C\u201D]/g, '"') // Replace smart double quotes
+          .replace(/\u2013/g, '-') // Replace en dash
+          .replace(/\u2014/g, '-') // Replace em dash
+          .replace(/[^\w\s-]/g, '') // Remove special characters
+          .replace(/\s+/g, '-') // Replace spaces with hyphens
+          .replace(/-+/g, '-'); // Remove consecutive hyphens
+
+        if (slug) {
+          heading.id = `toc-${slug}`;
+          // Also add scroll margin for smooth scroll with fixed header
+          heading.style.scrollMarginTop = '100px';
+        }
+      });
+    };
+
+    // Run heading ID generation
+    addHeadingIds();
+
     // Function to add Pinterest button to an image
     const addPinterestButton = (htmlImg: HTMLImageElement) => {
       // Skip if button already added
