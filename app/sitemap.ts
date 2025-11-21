@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getPosts, getCategories } from '@/lib/wordpress';
+import { getPosts, getCategories, getTags } from '@/lib/wordpress';
 
 // Revalidate sitemap every hour (3600 seconds)
 // This ensures new WordPress posts appear in the sitemap automatically
@@ -21,6 +21,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/disclaimer`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
     },
   ];
 
@@ -46,5 +64,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...postPages, ...categoryPages];
+  // Alle Tags holen
+  const tags = await getTags();
+  const tagPages = tags.map((tag) => ({
+    url: `${baseUrl}/tag/${tag.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.5,
+  }));
+
+  return [...staticPages, ...postPages, ...categoryPages, ...tagPages];
 }
